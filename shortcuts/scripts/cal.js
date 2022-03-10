@@ -107,32 +107,35 @@ keys.addEventListener('click', (event) => {
 
 $('body').on("keyup", function numeros(e) {
 
-    console.log(e);
+    //console.log(e);
 
-
-
-    const arreglo = {
-        13: "=",  
-        107: "+",  
-        109: "-",
-        106: "*", 
-        111: "/", 
+    var arreglo = {
+        13: "=",  //
+        187: "+", //107 
+        189: "-", //109
+        106: "*", //
+        111: "/", //
         
         
-        96: 0,
-        97: 1,
-        98: 2, 
-        51: 3, 
-        100: 4, 
-        101: 5, 
-        102: 6, 
-        103: 7, 
-        104: 8, 
-        105: 9, 
+        48: 0, //96
+        49: 1, //97
+        50: 2, //98
+        51: 3, //
+        52: 4, //100
+        53: 5, //101
+        54: 6, //102
+        55: 7, //103
+        56: 8, //104
+        57: 9, //105
     };
 
     var valor = arreglo[e.keyCode];
 
-    $("button[value= '${valor}' ]").trigger("click");
+    console.log(valor);
+
+    $(" button[value = '"+valor+"' ] ").trigger('click');
+  
+
+   
 
 })
