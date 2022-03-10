@@ -22,81 +22,19 @@
 
 <body>
 
-    <!--<div class="container"><br><br>
-        <div class="container">
-            <div class="row">
-
-                <input class="col-md-4" type="text">
-
-            </div>
-
-        </div><br>
-
-        <div class="container">
-            <div class="row">
-
-                <button class="btn btn-lg btn-danger col-md-2">AC</button>
-
-            </div>
-        </div><br>
-
-        <div class="container">
-            <div class="row">
-
-
-                <button class="btn btn-lg btn-primary col-md-1">7</button>
-
-                <button class="btn btn-lg btn-primary col-md-1">8</button>
-
-                <button class="btn btn-lg btn-primary col-md-1">9</button>
-
-                <button class="btn btn-lg btn-info col-md-1">+</button>
-
-            </div> <br>
-
-            <div class="row">
-
-                <button class="btn btn-lg btn-primary col-md-1">4</button>
-
-                <button class="btn btn-lg btn-primary col-md-1">5</button>
-
-                <button class="btn btn-lg btn-primary col-md-1">6</button>
-
-                <button class="btn btn-lg btn-info col-md-1">-</button>
-
-            </div><br>
-
-            <div class="row">
-
-                <button class="btn btn-lg btn-primary col-md-1">1</button>
-
-                <button class="btn btn-lg btn-primary col-md-1">2</button>
-
-                <button class="btn btn-lg btn-primary col-md-1">3</button>
-
-                <button class="btn btn-lg btn-info col-md-1">X</button>
-
-            </div><br>
-
-            <div class="row">
-
-                <button class="btn btn-lg btn-primary col-md-1">0</button>
-
-                <button class="btn btn-lg btn-primary col-md-1">.</button>
-
-                <button class="btn btn-lg btn-primary col-md-1">=</button>
-
-                <button class="btn btn-lg btn-info col-md-1">/</button>
-
-            </div>
-        </div>
-
-    </div>-->
 
     <div class="container">
 
-
         <div class="calculator card">
+
+            <div id="div" class="container"> <!--HISTORIAL-->
+
+                <!--<input class="col-md-2" type="text" disabled hidden value=""><br>-->
+        
+                <textarea id="historial"></textarea>
+            </div>
+            
+            <!--<p id="historial"></p>-->
 
             <input id="pantalla" type="text" class="calculator-screen z-depth-1" value="" disabled/>
 
@@ -128,7 +66,7 @@
 
                 <button type="button" class="equal-sign operator btn btn-default" value="=">=</button>
 
-            </div>
+            </div> 
         </div>
     </div>
 

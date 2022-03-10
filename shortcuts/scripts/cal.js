@@ -1,4 +1,3 @@
-
 ////////////////////////////
 const calculator = {
     displayValue: '',
@@ -103,39 +102,90 @@ keys.addEventListener('click', (event) => {
 
     inputDigit(target.value);
     updateDisplay();
+
+    //que se muestre el numero u el operador apretado al mismo tiempo en el historial
+    var historial;
+    var historial2 = [];
+    var h1;
+    var div;
+
+
+    historial = document.getElementById("historial");
+
+    historial2 = [JSON.stringify(calculator.displayValue)];
+   
+    historial.value = historial2;
+  
+    $(" #historial ").show();
+
+    
 });
 
-$('body').on("keyup", function numeros(e) {
+////////////////////////////////////////////////////////////
 
-    //console.log(e);
+$('body').on("keydown", function numeros(e) {
 
-    var arreglo = {
-        13: "=",  //
-        187: "+", //107 
-        189: "-", //109
-        106: "*", //
-        111: "/", //
+    var historial;
+    var historial2 = [];
+    var h1;
+    var div;
+
+
+    console.log(e);
+
+    var arreglo = { 
+
+        //SIN teclado numérico
+
+        13: "=", 
+        187: "+", 
+        189: "-", 
+        80: "*", //106 (el 80 es la letra p)
+        68: "/", //111 (el 68 es la letra d)
+        190: ".",
+        8: "all-clear",
         
         
-        48: 0, //96
-        49: 1, //97
-        50: 2, //98
-        51: 3, //
-        52: 4, //100
-        53: 5, //101
-        54: 6, //102
-        55: 7, //103
-        56: 8, //104
-        57: 9, //105
+        48: 0, 
+        49: 1, 
+        50: 2, 
+        51: 3, 
+        52: 4,
+        53: 5, 
+        54: 6,
+        55: 7, 
+        56: 8, 
+        57: 9, 
+
+        //CON teclado numérico
+
+        107: "+",  
+        109: "-", 
+        110: ".",
+        111: "/",
+        106: "*",
+
+        96: 0, 
+        97: 1, 
+        98: 2, 
+        99: 3, 
+        100: 4, 
+        101: 5, 
+        102: 6, 
+        103: 7, 
+        104: 8, 
+        105: 9, 
     };
 
-    var valor = arreglo[e.keyCode];
+    var valor = arreglo[e.keyCode]; 
+    
+    if (valor != undefined) //validar que no pase datos distintos a numeros y operadores
+    {
 
-    console.log(valor);
+        $(" button[value = '"+valor+"' ] ").trigger('click');
+    }
 
-    $(" button[value = '"+valor+"' ] ").trigger('click');
-  
-
-   
+    
+    
 
 })
