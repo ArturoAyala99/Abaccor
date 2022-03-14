@@ -39,14 +39,17 @@ function handleOperator(nextOperator) {
     if (firstOperand == null) {
         calculator.firstOperand = inputValue;
     } else if (operator) {
+
         const currentValue = firstOperand || 0;
         const result = performCalculation[operator](currentValue, inputValue);
 
         calculator.displayValue = String(result);
         calculator.firstOperand = result;
+        
     }
 
     calculator.waitingForSecondOperand = true;
+    
     calculator.operator = nextOperator;
 }
 
@@ -76,10 +79,17 @@ function updateDisplay() {
 
 updateDisplay();
 
+/*function validarDecimal(dot)
+{
+    
+}*/
+
 const keys = document.querySelector('.calculator-keys');
+
 keys.addEventListener('click', (event) => {
     const { target } = event;
     if (!target.matches('button')) {
+        console.log("error");
         return;
     }
 
@@ -104,21 +114,6 @@ keys.addEventListener('click', (event) => {
     inputDigit(target.value);
     updateDisplay();
 
-    //que se muestre el numero u el operador apretado al mismo tiempo en el historial
-    //var historial;
-    //var historial2 = [];
-    //var h1;
-    //var div;
-
-
-    /*historial = document.getElementById("historial");
-
-    historial2 = [JSON.stringify(calculator.displayValue)];
-   
-    historial.value = historial2;
-  
-    $(" #historial ").show();*/
-
     
 });
 
@@ -139,7 +134,7 @@ $('body').on("keydown", function numeros(e) {
         80: "*", //106 (el 80 es la letra p)
         68: "/", //111 (el 68 es la letra d)
         190: ".",
-        67: "all-clear", //(botón de espacio)
+        32: "all-clear", //(botón de espacio)
         
         
         
@@ -180,6 +175,8 @@ $('body').on("keydown", function numeros(e) {
     {
 
         $(" button[value = '"+valor+"' ] ").trigger('click');
+        console.log(valor);
+        
     }
 
     
