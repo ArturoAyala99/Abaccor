@@ -1,3 +1,4 @@
+
 ////////////////////////////
 const calculator = {
     displayValue: '',
@@ -104,19 +105,19 @@ keys.addEventListener('click', (event) => {
     updateDisplay();
 
     //que se muestre el numero u el operador apretado al mismo tiempo en el historial
-    var historial;
-    var historial2 = [];
-    var h1;
-    var div;
+    //var historial;
+    //var historial2 = [];
+    //var h1;
+    //var div;
 
 
-    historial = document.getElementById("historial");
+    /*historial = document.getElementById("historial");
 
     historial2 = [JSON.stringify(calculator.displayValue)];
    
     historial.value = historial2;
   
-    $(" #historial ").show();
+    $(" #historial ").show();*/
 
     
 });
@@ -125,25 +126,21 @@ keys.addEventListener('click', (event) => {
 
 $('body').on("keydown", function numeros(e) {
 
-    var historial;
-    var historial2 = [];
-    var h1;
-    var div;
-
-
+    
     console.log(e);
-
+    
     var arreglo = { 
-
+    
         //SIN teclado numérico
-
+    
         13: "=", 
         187: "+", 
         189: "-", 
         80: "*", //106 (el 80 es la letra p)
         68: "/", //111 (el 68 es la letra d)
         190: ".",
-        8: "all-clear",
+        67: "all-clear", //(botón de espacio)
+        
         
         
         48: 0, 
@@ -156,15 +153,15 @@ $('body').on("keydown", function numeros(e) {
         55: 7, 
         56: 8, 
         57: 9, 
-
+    
         //CON teclado numérico
-
+    
         107: "+",  
         109: "-", 
         110: ".",
         111: "/",
         106: "*",
-
+    
         96: 0, 
         97: 1, 
         98: 2, 
@@ -179,7 +176,7 @@ $('body').on("keydown", function numeros(e) {
 
     var valor = arreglo[e.keyCode]; 
     
-    if (valor != undefined) //validar que no pase datos distintos a numeros y operadores
+    if (valor != undefined ) //validar que no pase datos distintos a numeros y operadores
     {
 
         $(" button[value = '"+valor+"' ] ").trigger('click');
