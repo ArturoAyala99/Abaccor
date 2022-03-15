@@ -6,6 +6,7 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
+    <link href="css/cal.css" rel="stylesheet" type="text/css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
 
@@ -13,6 +14,10 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
     <script defer type="text/javascript" src="scripts/index.js"></script>
+
+    
+
+    <script defer type="text/javascript" src="scripts/cal.js"></script>
 
 </head>
 
@@ -35,6 +40,48 @@
         </div>
 
     </div>
+
+    <!--Calculadora-->
+
+    <div id="cal-container" class="container" style="display: none;">
+        
+        <div class="calculator card">
+
+            <input id="pantalla" type="text" class="calculator-screen z-depth-1" value="0" disabled/>
+
+            <div class="calculator-keys">
+
+                <button type="button" class="operator btn btn-info" value="+">+</button>
+                <button type="button" class="operator btn btn-info" value="-">-</button>
+                <button type="button" class="operator btn btn-info" value="*">&times;</button>
+                <button type="button" class="operator btn btn-info" value="/">&divide;</button>
+
+                <button type="button" value="7" class="btn btn-light waves-effect">7</button>
+                <button type="button" value="8" class="btn btn-light waves-effect">8</button>
+                <button type="button" value="9" class="btn btn-light waves-effect">9</button>
+
+
+                <button type="button" value="4" class="btn btn-light waves-effect">4</button>
+                <button type="button" value="5" class="btn btn-light waves-effect">5</button>
+                <button type="button" value="6" class="btn btn-light waves-effect">6</button>
+
+
+                <button type="button" value="1" class="btn btn-light waves-effect">1</button>
+                <button type="button" value="2" class="btn btn-light waves-effect">2</button>
+                <button type="button" value="3" class="btn btn-light waves-effect">3</button>
+
+
+                <button type="button" value="0" class="btn btn-light waves-effect">0</button>
+                <button type="button" class="decimal function btn btn-secondary" value=".">.</button>
+                <button type="button" class="all-clear function btn btn-danger btn-sm" value="all-clear">AC</button>
+
+                <button type="button" class="equal-sign operator btn btn-success" value="=">=</button>
+
+            </div> 
+        </div> 
+    </div>
+
+    <!--Fin calculadora-->
 
 </body>
 

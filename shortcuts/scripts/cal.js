@@ -29,7 +29,7 @@ function inputDecimal(dot) {
 
 function handleOperator(nextOperator) {
     const { firstOperand, displayValue, operator } = calculator
-    const inputValue = parseFloat(displayValue);
+    const inputValue = parseFloat(displayValue); 
 
     if (operator && calculator.waitingForSecondOperand) {
         calculator.operator = nextOperator;
@@ -40,7 +40,9 @@ function handleOperator(nextOperator) {
         calculator.firstOperand = inputValue;
     } else if (operator) {
 
+
         const currentValue = firstOperand || 0;
+        
         const result = performCalculation[operator](currentValue, inputValue);
 
         calculator.displayValue = String(result);
@@ -62,7 +64,7 @@ const performCalculation = {
 
     '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
 
-    '=': (firstOperand, secondOperand) => secondOperand
+    '=': (firstOperand, secondOperand) => firstOperand //secondOperand
 };
 
 function resetCalculator() {
@@ -79,15 +81,11 @@ function updateDisplay() {
 
 updateDisplay();
 
-/*function validarDecimal(dot)
-{
-    
-}*/
-
 const keys = document.querySelector('.calculator-keys');
 
 keys.addEventListener('click', (event) => {
     const { target } = event;
+
     if (!target.matches('button')) {
         console.log("error");
         return;
@@ -100,6 +98,8 @@ keys.addEventListener('click', (event) => {
     }
 
     if (target.classList.contains('decimal')) {
+        inputDigit( target.value );
+        updateDisplay(); 
         inputDecimal(target.value);
         updateDisplay();
         return;
@@ -111,9 +111,8 @@ keys.addEventListener('click', (event) => {
         return;
     }
 
-    inputDigit(target.value);
+    inputDigit( target.value );
     updateDisplay();
-
     
 });
 
@@ -135,6 +134,7 @@ $('body').on("keydown", function numeros(e) {
         68: "/", //111 (el 68 es la letra d)
         190: ".",
         32: "all-clear", //(botón de espacio)
+        67: "c", //cerrar calculadora
         
         
         
@@ -175,11 +175,9 @@ $('body').on("keydown", function numeros(e) {
     {
 
         $(" button[value = '"+valor+"' ] ").trigger('click');
-        console.log(valor);
+        //console.log(valor);
         
     }
-
-    
     
 
 })
