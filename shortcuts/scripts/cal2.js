@@ -5,8 +5,10 @@ const operation = {
 }
 
 var result;
-
+var validar;
+var rvalue;
 var display = document.getElementById("pantalla");
+var displayHistorial = document.getElementById("historial");
 
 
 function numberValue(num)
@@ -16,6 +18,7 @@ function numberValue(num)
 
     display.value = operation.leftValue;
     console.log("left value:" + operation.leftValue);
+
 }
 
 function numberValue2(num)
@@ -25,62 +28,30 @@ function numberValue2(num)
     display.value = operation.rightValue;
     console.log("right value:" + operation.rightValue);
 
-    
 }
 
 function addDecimal(dot)
 {
-
-    if (operation.leftValue === display.value) {
-        // Append the decimal point
-        if (!operation.leftValue.includes(dot))
-        {
-            // Append the decimal point
-            display.value += dot;
-            operation.leftValue += dot;
-        }
-        
-    } 
-    
-    if (!operation.rightValue.includes(dot) && !display.value.includes(dot))
+    if (operation.operator === '')
     {
-        if (!operation.right.includes(dot))
-        {
-            // Append the decimal point
-            display.value += dot;
-            operation.rightValue += dot;
-        }
-    }
-
-    /* if (display.value === operation.leftValue) { //si esto posicionado en el left value entonces..
         if (!operation.leftValue.includes(dot))
         {
-            // Append the decimal point
             operation.leftValue += dot;
             display.value = operation.leftValue;
-        }
-    }
 
-    if (display.value === operation.rightValue) { //si esto posicionado en el right value entonces..
+           // operation.leftValue = display.value;
+        }
+    }else
+    {
         if (!operation.rightValue.includes(dot))
         {
-            // Append the decimal point
             operation.rightValue += dot;
             display.value = operation.rightValue;
-        }
-    } */
 
-   /*  if (!display.value.includes(target.value)) {
-        // Append the decimal point
-        display.value += target.value;
 
-        if (operation.operator === '') //validar si el decimal se lo agrego al lef o right value
-        {
-            operation.leftValue += target.value;
-        }else{
-            operation.rightValue += target.value
         }
-    } */ 
+        
+    }
 }
 
 function resultOperations(num1, num2, op)
@@ -118,7 +89,25 @@ function resultOperations(num1, num2, op)
     
 }
 
+function historial(text)
+{
+    
+    if (validar != operation.leftValue && text.value === '=')
+    {
+        displayHistorial.innerHTML = validar + " " + operation.operator + " " + rvalue + " " + text.value;
+    }
+    else
+    {
+        displayHistorial.innerHTML = operation.leftValue + " " + operation.operator + " " + operation.rightValue;
+        rvalue = operation.rightValue;
+    }
+
+    validar = operation.leftValue;
+}
+
 $('button').on('click', function (e){
+
+    
 
     const { target } = e;
 
@@ -140,6 +129,7 @@ $('button').on('click', function (e){
 
         }else{
             operation.operator = target.value; //almacenar el operador si ya tengo un valor en left value
+            
         }
 
     }
@@ -149,6 +139,7 @@ $('button').on('click', function (e){
         if (operation.leftValue === '0' || operation.operator != '') //validar que ya hay un operador o que ya haya un valor en left value para poner el segundo numero
         {
             numberValue2(target.value); //almacenar el segundo numero
+
         }
         else{
             numberValue(target.value);
@@ -159,19 +150,27 @@ $('button').on('click', function (e){
     {
         // If the `displayValue` does not contain a decimal point
         addDecimal(target.value);
-       
+
     }
 
     if (target.classList.contains('equal-sign'))
     {
-        if (operation.rightValue === '') //validar que no haya puesto un valor al rightValue
+
+        if (operation.leftValue === '' || operation.operator === '' || operation.rightValue === '')
+        {
+            return; //
+        }
+
+        if (operation.rightValue === '') //validar que no haya puesto un valor al rightValue para hacer una operacion 
         {
             operation.rightValue = '0';
         }
 
+        if (operation.leftValue === '' || operation.operator === '' || operation.rightValue === '')
+        {
+            display.value = '0';
+        }
         resultOperations(operation.leftValue, operation.rightValue, operation.operator)
-        
-        
        
     }
 
@@ -199,7 +198,7 @@ $('button').on('click', function (e){
         }
         
     }
-   
+    historial(target); //pasar el igual
 })
 
 ////////////////////////////////////////////////////////////
