@@ -107,8 +107,6 @@ function historial(text)
 
 $('button').on('click', function (e){
 
-    
-
     const { target } = e;
 
 
@@ -198,14 +196,17 @@ $('button').on('click', function (e){
         }
         
     }
+
     historial(target); //pasar el igual
+
+    module.exports = {result}; //exportar el resultado
+
 })
 
 ////////////////////////////////////////////////////////////
 
 $('body').on("keydown", function numeros(e) {
 
-    
     console.log(e);
     
     var arreglo = { 

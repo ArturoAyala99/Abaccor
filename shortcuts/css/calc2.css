@@ -24,7 +24,7 @@ html {
 #historial {
     position:absolute;
     color: white;
-    top: 0px;
+    top: 0px; /*0px*/
     right: 21px;
     
 }
@@ -42,7 +42,7 @@ html {
     
 }
 input#pantalla[value="0"] {
-    padding-top: 0px; 
+    padding-top: 12px; 
    
 }
 
@@ -51,9 +51,15 @@ button {
     font-size: 2rem!important;
 }
 
+button:focus{
+    outline: none !important; /*para quitar el click automaticamente*/
+    
+}
+
+
 .equal-sign {
-    height: 100%;
-    grid-area: 2 / 4 / 6 / 5;
+    height: 100%; /*100%*/
+    grid-area: 2 / 4 / 5 / 4;
 }
 
 .calculator-keys {
@@ -62,3 +68,27 @@ button {
     grid-gap: 20px;
     padding: 20px;
 }
+
+/* .modal-body {
+    position: relative;
+    padding: 258px;
+
+} */
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    -webkit-box-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+    box-shadow: 0 3px 9px rgb(0 0 0 / 50%);
+    outline: 0;
+    padding-top: 243px;
+    padding-bottom: 243px;
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: 100px;
+    margin-right: 100px; 
+}
+
