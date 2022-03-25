@@ -9,6 +9,7 @@ var validar;
 var rvalue;
 var display = document.getElementById("pantalla");
 var displayHistorial = document.getElementById("historial");
+var displayInput = document.getElementById("input");
 
 
 function numberValue(num)
@@ -159,17 +160,21 @@ $('button').on('click', function (e){
             return; //
         }
 
-        if (operation.rightValue === '') //validar que no haya puesto un valor al rightValue para hacer una operacion 
+        /* if (operation.rightValue === '') //validar que no haya puesto un valor al rightValue para hacer una operacion 
         {
             operation.rightValue = '0';
-        }
+        } */
 
         if (operation.leftValue === '' || operation.operator === '' || operation.rightValue === '')
         {
             display.value = '0';
         }
-        resultOperations(operation.leftValue, operation.rightValue, operation.operator)
-       
+        resultOperations(operation.leftValue, operation.rightValue, operation.operator);
+
+        $('#myModal').modal('hide');
+
+        displayInput.value = result.toFixed(3); //almacenar en el input el resultado final y limitar los decimales a 3
+
     }
 
     if (target.classList.contains('all-clear'))
@@ -199,7 +204,7 @@ $('button').on('click', function (e){
 
     historial(target); //pasar el igual
 
-    module.exports = {result}; //exportar el resultado
+   
 
 })
 

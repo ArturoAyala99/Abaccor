@@ -1,0 +1,101 @@
+@mixin htm ($size, $box){
+    font-size: $size;
+    box-sizing: $box;
+}
+html{
+    @include htm(62.5%, border-box);
+}
+/**/
+@mixin calculator($border, $radius, $pos, $top, $left, $trans, $wdh) {
+    border: $border;
+    border-radius: $radius;
+    position: $pos;
+    top: $top;
+    left: $left;
+    transform: $trans;
+    width: $wdh;
+}
+.calculator{
+    @include calculator(1px solid #ccc, 5px, absolute, 50%, 50%, translate(-50%, -50%), 400px);
+}
+/**/
+@mixin hist($pos, $color, $top, $right) {
+    position:$pos;
+    color: $color;
+    top: $top; /*0px*/
+    right: $right;
+}
+#historial {
+    @include hist(absolute, white, 0px, 21px);
+}
+/**/
+@mixin screen($wdh, $height, $border, $bkg, $color, $txt, $padding, $padding2, $font) {
+    width: $wdh;
+    height: $height;
+    border: $border;
+    background-color: $bkg;
+    color: $color;
+    text-align: $txt;
+    padding-right: $padding;
+    padding-left: $padding2;
+    font-size: $font;
+}
+.calculator-screen {
+    @include screen(100%, 95px, none, #252525, #fff, right, 20px, 10px, 4rem);
+}
+/**/
+@mixin inpantalla($padding) {
+    padding-top: $padding;
+}
+input#pantalla[value="0"] {
+    @include inpantalla(12px);
+}
+/**/ 
+@mixin btn($height, $font) {
+    height: $height;
+    font-size: $font;
+}
+button{
+    @include btn(60px, 2rem!important);
+}
+/**/ 
+@mixin sign($height, $grid) {
+    height: $height;
+    grid-area: $grid;
+}
+.equal-sign{
+    @include sign(100%, 2 / 4 / 5 / 4);
+}
+/**/ 
+@mixin keys($display, $grid, $grid2, $padding) {
+    display: $display;
+    grid-template-columns: $grid;
+    grid-gap: $grid2;
+    padding: $padding;
+}
+.calculator-keys {
+    @include keys(grid, repeat(4, 1fr), 20px, 20px);
+}
+/**/  
+@mixin content($pos, $bkg, $bkg2, $border, $border2, $radius, $webkit, $box, $out, $padding, $padding2, $padding3, $padding4, $margin, $margin2) {
+    position: $pos;
+    background-color: $bkg;
+    background-clip: $bkg2;
+    border: $border;
+    border: $border2;
+    border-radius: $radius;
+    -webkit-box-shadow: $webkit;
+    box-shadow: $box;
+    outline: $out;
+    padding-top: $padding;
+    padding-bottom: $padding2;
+    padding-left: $padding3;
+    padding-right: $padding4;
+    margin-left: $margin;
+    margin-right: $margin2; 
+}
+.modal-content {
+    @include content(relative, #fff, padding-box, 1px solid #999, 1px solid rgba(0,0,0,.2), 
+    6px, 0 3px 9px rgb(0 0 0 / 50%), 0 3px 9px rgb(0 0 0 / 50%), 0, 243px, 243px, 100px, 100px, 100px, 100px)
+}
+

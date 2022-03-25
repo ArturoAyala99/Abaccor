@@ -54,7 +54,7 @@ button {
 button:focus{
     outline: none !important; /*para quitar el click automaticamente*/
     
-}
+} /*no se modificó en el sass*/
 
 
 .equal-sign {
