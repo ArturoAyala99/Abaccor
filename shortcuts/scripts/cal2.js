@@ -11,6 +11,12 @@ var display = document.getElementById("pantalla");
 var displayHistorial = document.getElementById("historial");
 var displayInput = document.getElementById("input");
 
+/* var calculator = {
+    result: "",
+    result: "",
+    display: document.getElementById("pantalla"),
+}; */
+
 
 function numberValue(num)
 {
@@ -177,8 +183,7 @@ $('button').on('click', function (e){
 
     }
 
-    if (target.classList.contains('all-clear'))
-    {
+    if (target.classList.contains('all-clear')) {
       operation.leftValue = '';
       operation.operator = '';
       operation.rightValue = '';
@@ -204,70 +209,72 @@ $('button').on('click', function (e){
 
     historial(target); //pasar el igual
 
-   
-
+    
 })
 
 ////////////////////////////////////////////////////////////
 
 $('body').on("keydown", function numeros(e) {
 
-    console.log(e);
+    if (!$('#myModal').hasClass('in')) return;  //validar que el modal no esté abierto, de lo contrario hace lo de siempre
     
-    var arreglo = { 
-    
-        //SIN teclado numérico
-    
-        13: "=", 
-        187: "+", 
-        189: "-", 
-        80: "*", //106 (el 80 es la letra p)
-        68: "/", //111 (el 68 es la letra d)
-        190: ".",
-        32: "all-clear", //(botón de espacio)
-        67: "c", //cerrar calculadora
-        8: "clear", //el backspace para eliminar un valor y no todos como el "all clear"
+        var arreglo = { 
         
+            //SIN teclado numérico
         
+            13: "=", 
+            187: "+", 
+            189: "-", 
+            80: "*", //106 (el 80 es la letra p)
+            68: "/", //111 (el 68 es la letra d)
+            190: ".",
+            32: "all-clear", //(botón de espacio)
+            67: "c", //cerrar calculadora
+            8: "clear", //el backspace para eliminar un valor y no todos como el "all clear"
+            
+            
+            
+            48: 0, 
+            49: 1, 
+            50: 2, 
+            51: 3, 
+            52: 4,
+            53: 5, 
+            54: 6,
+            55: 7, 
+            56: 8, 
+            57: 9, 
         
-        48: 0, 
-        49: 1, 
-        50: 2, 
-        51: 3, 
-        52: 4,
-        53: 5, 
-        54: 6,
-        55: 7, 
-        56: 8, 
-        57: 9, 
-    
-        //CON teclado numérico
-    
-        107: "+",  
-        109: "-", 
-        110: ".",
-        111: "/",
-        106: "*",
-    
-        96: 0, 
-        97: 1, 
-        98: 2, 
-        99: 3, 
-        100: 4, 
-        101: 5, 
-        102: 6, 
-        103: 7, 
-        104: 8, 
-        105: 9, 
-    };
+            //CON teclado numérico
+        
+            107: "+",  
+            109: "-", 
+            110: ".",
+            111: "/",
+            106: "*",
+        
+            96: 0, 
+            97: 1, 
+            98: 2, 
+            99: 3, 
+            100: 4, 
+            101: 5, 
+            102: 6, 
+            103: 7, 
+            104: 8, 
+            105: 9, 
+        };
 
-    var valor = arreglo[e.keyCode]; 
-    
-    if (valor != undefined ) //validar que no pase datos distintos a numeros y operadores
-    {
-
-        $(" button[value = '"+valor+"' ] ").trigger('click');
-        //console.log(valor);
+        var valor = arreglo[e.keyCode]; 
         
-    }
+        if (valor != undefined ) //validar que no pase datos distintos a numeros y operadores
+        {
+
+            $(" button[value = '"+valor+"' ] ").trigger('click');
+            //console.log(valor);
+            
+        }
+
+        e.preventDefault();
+    
 })
