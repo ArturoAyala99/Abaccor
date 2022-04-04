@@ -11,11 +11,6 @@ var display = document.getElementById("pantalla");
 var displayHistorial = document.getElementById("historial");
 var displayInput = document.getElementById("input");
 
-/* var calculator = {
-    result: "",
-    result: "",
-    display: document.getElementById("pantalla"),
-}; */
 
 
 function numberValue(num)
@@ -46,7 +41,7 @@ function addDecimal(dot)
             operation.leftValue += dot;
             display.value = operation.leftValue;
 
-           // operation.leftValue = display.value;
+           
         }
     }else
     {
@@ -277,4 +272,15 @@ $('body').on("keydown", function numeros(e) {
 
         e.preventDefault();
     
+})
+$('#input').on('keydown', function (e) {
+    if (e.keyCode === 67 || (e.keyCode === 67 && e.keyCode === 17)) { //Si aprieta "c" o ctrl+c
+        
+        //window.open("calculadora/cal.html");
+        //document.getElementById("cal-container").hidden = false; //Aparecer calculadora
+        $('#myModal').modal('show');
+
+        //console.log(resultado);
+    }
+
 })
