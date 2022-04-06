@@ -111,6 +111,8 @@ $('button').on('click', function (e){
 
     const { target } = e;
 
+    target.focus();//cuando apriete un botón aparezca un color
+    
 
     if (target.classList.contains('operator') )
     {
@@ -203,7 +205,6 @@ $('button').on('click', function (e){
     }
 
     historial(target); //pasar el igual
-
     
 })
 
@@ -261,6 +262,8 @@ $('body').on("keydown", function numeros(e) {
         };
 
         var valor = arreglo[e.keyCode]; 
+
+        
         
         if (valor != undefined ) //validar que no pase datos distintos a numeros y operadores
         {
