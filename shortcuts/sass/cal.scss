@@ -58,29 +58,50 @@
         padding: 20px;
 
         button {
-            outline:none;
             height: 60px;
             font-size: 30px;
-            transition: .3s all;
-            box-shadow: 0px 0px 0px white;
-        }
-        
-        button:focus{
-            outline:none;
-            box-shadow: 0px 0px 10px #ff6961e6;
         }
     
         .operator{
             background-color: #009199;
             font-weight: bold;
             color: white;
+
+            outline:none;
+            transition: .3s all;
+            box-shadow: 0px 0px 0px white;
+
+            &:focus {
+                outline:none;
+                box-shadow: 0px 0px 10px #009199;
+            }
         }
 
-        .colorclass{
+        .clearclass{ /*clase de los clear y all clear*/
             background-color: #FF7474;
             color: white;
+
+            outline:none;
+            transition: .3s all;
+            box-shadow: 0px 0px 0px white;
+
+            &:focus {
+                outline:none;
+                box-shadow: 0px 0px 10px #ff6961e6;
+            }
         }
 
+        .number{
+            outline:none;
+            transition: .3s all;
+            box-shadow: 0px 0px 0px white;
+
+            &:focus {
+                outline:none;
+                box-shadow: 0px 0px 10px #22344B;
+            }
+        }
+    
         .plus{
             grid-column: 4/5;
             grid-row: 3/6; 
@@ -91,5 +112,6 @@
             background-color: #009199;
             color: white;
         }
+       
     }
 }
