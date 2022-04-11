@@ -1,0 +1,30 @@
+$mint-gamut: (
+   "base":      #1BAE9F,
+   "lighten-3": #EEF8F6,
+   "lighten-2": #8BCDBD,
+   "lighten-1": #5DAAA5,
+   "darken-1":  #439D98,
+   "darken-2":  #1C6460
+) !default;
+
+$bw-gamut: (
+   "base":        #C4C4C4,
+   "lighten-4":   #FAFAFA,
+   "lighten-3":   #F8F8F8,
+   "lighten-2":   #F3EFEF,
+   "lighten-1":   #DADADA,
+   "darken-1":    #9F9E9E,
+   "darken-2":    #4E4E4E,
+   "darken-3":    #464646
+) !default;
+
+$shades: (
+  "black":        #000000,
+  "white":        #FFFFFF,
+  "transparent":  transparent
+) !default;
+
+$colors: (
+   "bw-gamut": $bw-gamut,
+   "shades": $shades
+) !default;

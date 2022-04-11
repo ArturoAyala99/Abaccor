@@ -1,0 +1,476 @@
+/// Get color from map
+/// @param {Map}     $map     - Lista de Colores
+/// @param {String}  $colors  - Llave o nombre del color
+/// @return {String}
+///
+@function get-color($map, $colors...){
+   $temp: $map;
+   $count: 1;
+   @each $color in $colors {
+      @if map-has-key($temp, $color){
+         @if $count < length($colors) {
+            $temp: map-get($temp, $color);
+         }@else{
+            @return map-get($temp, $color);
+         }
+
+         $count: $count + 1;
+      }
+   }
+
+   @warn "Unknown color in your color map.";
+   @return null;
+}
+
+/// Colores generales
+/// @access private
+$colors-base: (
+   "black":       #000000,
+   "gray":        #E1E5E9,
+   "calm":        #607E8C,
+   "white":       #FFFFFF,
+   "red":         #FF7474,
+   "orange":      #DA570D,
+   "yellow":      #FFB23F,
+   "aqua":        #36DFE8,
+   "mint":        #50F3C4,
+   "blue":        #3CC7FF,
+   "solidity":    #22344B,
+);
+
+/// Variaciones de los colores generales
+/// @access private
+$gray: (
+   "base":     get-color($colors-base, "gray"),
+  
+   "lighten-5": scale-color(get-color($colors-base, "gray"), $lightness: 80%),
+   "lighten-4": scale-color(get-color($colors-base, "gray"), $lightness: 70%),
+   "lighten-3": scale-color(get-color($colors-base, "gray"), $lightness: 60%),
+   "lighten-2": scale-color(get-color($colors-base, "gray"), $lightness: 40%),
+   "lighten-1": scale-color(get-color($colors-base, "gray"), $lightness: 20%),
+   "darken-1": scale-color(get-color($colors-base, "gray"), $lightness: -10%),
+   "darken-2": scale-color(get-color($colors-base, "gray"), $lightness: -20%),
+   "darken-3": scale-color(get-color($colors-base, "gray"), $lightness: -30%),
+   "darken-4": scale-color(get-color($colors-base, "gray"), $lightness: -40%),
+   "darken-5": scale-color(get-color($colors-base, "gray"), $lightness: -50%),
+  
+);
+
+$calm: (
+   "base":     get-color($colors-base, "calm"),
+  
+   "lighten-5": scale-color(get-color($colors-base, "calm"), $lightness: 80%),
+   "lighten-4": scale-color(get-color($colors-base, "calm"), $lightness: 70%),
+   "lighten-3": scale-color(get-color($colors-base, "calm"), $lightness: 60%),
+   "lighten-2": scale-color(get-color($colors-base, "calm"), $lightness: 40%),
+   "lighten-1": scale-color(get-color($colors-base, "calm"), $lightness: 20%),
+   "darken-1": scale-color(get-color($colors-base, "calm"), $lightness: -10%),
+   "darken-2": scale-color(get-color($colors-base, "calm"), $lightness: -20%),
+   "darken-3": scale-color(get-color($colors-base, "calm"), $lightness: -30%),
+   "darken-4": scale-color(get-color($colors-base, "calm"), $lightness: -40%),
+   "darken-5": scale-color(get-color($colors-base, "calm"), $lightness: -50%),
+  
+);
+
+$red: (
+   "base":     get-color($colors-base, "red"),
+   
+   "lighten-5": scale-color(get-color($colors-base, "red"), $lightness: 80%),
+   "lighten-4": scale-color(get-color($colors-base, "red"), $lightness: 70%),
+   "lighten-3": scale-color(get-color($colors-base, "red"), $lightness: 60%),
+   "lighten-2": scale-color(get-color($colors-base, "red"), $lightness: 40%),
+   "lighten-1": scale-color(get-color($colors-base, "red"), $lightness: 20%),
+   "darken-1": scale-color(get-color($colors-base, "red"), $lightness: -10%),
+   "darken-2": scale-color(get-color($colors-base, "red"), $lightness: -20%),
+   "darken-3": scale-color(get-color($colors-base, "red"), $lightness: -30%),
+   "darken-4": scale-color(get-color($colors-base, "red"), $lightness: -40%),
+   "darken-5": scale-color(get-color($colors-base, "red"), $lightness: -50%),
+   
+);
+
+$orange: (
+   "base":     get-color($colors-base, "orange"),
+   "lighten-5": scale-color(get-color($colors-base, "orange"), $lightness: 80%),
+   "lighten-4": scale-color(get-color($colors-base, "orange"), $lightness: 70%),
+   "lighten-3": scale-color(get-color($colors-base, "orange"), $lightness: 60%),
+   "lighten-2": scale-color(get-color($colors-base, "orange"), $lightness: 40%),
+   "lighten-1": scale-color(get-color($colors-base, "orange"), $lightness: 20%),
+   "darken-1": scale-color(get-color($colors-base, "orange"), $lightness: -10%),
+   "darken-2": scale-color(get-color($colors-base, "orange"), $lightness: -20%),
+   "darken-3": scale-color(get-color($colors-base, "orange"), $lightness: -30%),
+   "darken-4": scale-color(get-color($colors-base, "orange"), $lightness: -40%),
+   "darken-5": scale-color(get-color($colors-base, "orange"), $lightness: -50%),
+);
+
+$aqua: (
+   "base":     get-color($colors-base, "aqua"), 
+   "lighten-5": scale-color(get-color($colors-base, "aqua"), $lightness: 80%),
+   "lighten-4": scale-color(get-color($colors-base, "aqua"), $lightness: 70%),
+   "lighten-3": scale-color(get-color($colors-base, "aqua"), $lightness: 60%),
+   "lighten-2": scale-color(get-color($colors-base, "aqua"), $lightness: 40%),
+   "lighten-1": scale-color(get-color($colors-base, "aqua"), $lightness: 20%),
+   "darken-1": scale-color(get-color($colors-base, "aqua"), $lightness: -10%),
+   "darken-2": scale-color(get-color($colors-base, "aqua"), $lightness: -20%),
+   "darken-3": scale-color(get-color($colors-base, "aqua"), $lightness: -30%),
+   "darken-4": scale-color(get-color($colors-base, "aqua"), $lightness: -40%),
+   "darken-5": scale-color(get-color($colors-base, "aqua"), $lightness: -50%),
+  
+);
+
+$mint: (
+   "base":     get-color($colors-base, "mint"),
+   "lighten-5": scale-color(get-color($colors-base, "mint"), $lightness: 80%),
+   "lighten-4": scale-color(get-color($colors-base, "mint"), $lightness: 70%),
+   "lighten-3": scale-color(get-color($colors-base, "mint"), $lightness: 60%),
+   "lighten-2": scale-color(get-color($colors-base, "mint"), $lightness: 40%),
+   "lighten-1": scale-color(get-color($colors-base, "mint"), $lightness: 20%),
+   "darken-1": scale-color(get-color($colors-base, "mint"), $lightness: -10%),
+   "darken-2": scale-color(get-color($colors-base, "mint"), $lightness: -20%),
+   "darken-3": scale-color(get-color($colors-base, "mint"), $lightness: -30%),
+   "darken-4": scale-color(get-color($colors-base, "mint"), $lightness: -40%),
+   "darken-5": scale-color(get-color($colors-base, "mint"), $lightness: -50%),
+);
+
+$blue: (
+   "base":     get-color($colors-base, "blue"),  
+   "lighten-5": scale-color(get-color($colors-base, "blue"), $lightness: 80%),
+   "lighten-4": scale-color(get-color($colors-base, "blue"), $lightness: 70%),
+   "lighten-3": scale-color(get-color($colors-base, "blue"), $lightness: 60%),
+   "lighten-2": scale-color(get-color($colors-base, "blue"), $lightness: 40%),
+   "lighten-1": scale-color(get-color($colors-base, "blue"), $lightness: 20%),
+   "darken-1": scale-color(get-color($colors-base, "blue"), $lightness: -10%),
+   "darken-2": scale-color(get-color($colors-base, "blue"), $lightness: -20%),
+   "darken-3": scale-color(get-color($colors-base, "blue"), $lightness: -30%),
+   "darken-4": scale-color(get-color($colors-base, "blue"), $lightness: -40%),
+   "darken-5": scale-color(get-color($colors-base, "blue"), $lightness: -50%), 
+);
+
+
+$solidity: (
+   "base":     get-color($colors-base, "solidity"),
+   "lighten-5": scale-color(get-color($colors-base, "solidity"), $lightness: 80%),
+   "lighten-4": scale-color(get-color($colors-base, "solidity"), $lightness: 70%),
+   "lighten-3": scale-color(get-color($colors-base, "solidity"), $lightness: 60%),
+   "lighten-2": scale-color(get-color($colors-base, "solidity"), $lightness: 40%),
+   "lighten-1": scale-color(get-color($colors-base, "solidity"), $lightness: 20%),
+   "darken-1": scale-color(get-color($colors-base, "solidity"), $lightness: -10%),
+   "darken-2": scale-color(get-color($colors-base, "solidity"), $lightness: -20%),
+   "darken-3": scale-color(get-color($colors-base, "solidity"), $lightness: -30%),
+   "darken-4": scale-color(get-color($colors-base, "solidity"), $lightness: -40%),
+   "darken-5": scale-color(get-color($colors-base, "solidity"), $lightness: -50%),
+);
+
+$shades: (
+  "black":        get-color($colors-base, "black"),
+  "white":        get-color($colors-base, "white"),
+  "transparent":  transparent
+);
+
+$mint-gamut: (
+   "base":      #1BAE9F,
+   "lighten-3": #EEF8F6,
+   "lighten-2": #8BCDBD,
+   "lighten-1": #5DAAA5,
+   "darken-1":  #439D98,
+   "darken-2":  #1C6460
+);
+
+$bw-gamut: (
+   "base":        #C4C4C4,
+   "lighten-4":   #FAFAFA,
+   "lighten-3":   #F5F5F5,
+   "lighten-2":   #F3EFEF,
+   "lighten-1":   #DADADA,
+   "darken-1":    #9F9E9E,
+   "darken-2":    #4E4E4E,
+   "darken-3":    #464646
+);
+
+/// Se concentran todos los colores
+/// @access public
+$colors: (
+   "gray": $gray,
+   "calm": $calm,
+   "orange": $orange,
+   "aqua": $aqua,
+   "mint": $mint,
+   "blue": $blue,
+   "bw-gamut": $bw-gamut,
+   "shades": $shades,
+   "solidity": $solidity
+);
+
+/// Colores de los componentes
+/// @access public
+
+/// Sidenav
+// #region Sidenav
+$sidenav-colors: (
+   "background": get-color($shades, "white"),
+   "fonts": get-color($gray, "base"),
+   "menu": (
+      "hover": (
+         "background": get-color($shades, "white"),
+         "fonts": get-color($mint, "darken-3")
+      ),
+      "active": (
+         "background": get-color($shades, "white"),
+         "fonts": get-color($mint, "base")
+      )
+   ),
+   "submenu": (
+      "background": get-color($shades, "white"),
+      "hover": (
+         "background": get-color($shades, "transparent"),
+         "fonts": get-color($mint, "darken-3"),
+      ),
+      "active": (
+         "background": get-color($mint, "base"),
+         "fonts": get-color($shades, "white")
+      )
+   ),
+   "item": get-color($mint, "base"),
+);
+// #endregion
+
+/// Modal
+// #region Modal
+$modal-colors: (
+   "header": (
+      "background": get-color($solidity, "base"),
+      "font": get-color($shades, "white")
+   ),
+   "content": (
+      "background": get-color($shades, "white"),
+      "font": get-color($shades, "white")
+   )
+);
+// #endregion
+
+/// Cards
+// #region Cards
+$cards-colors: (
+   "header": (
+      "background":get-color($shades, "white"),
+      "font": get-color($gray, "darken-8"),
+      "border":#9E9F9E
+   ),
+   "panel": (
+      "background": get-color($shades, "white"),
+      "font": get-color($gray, "darken-8")
+   )
+);
+// #endregion
+
+/// Forms
+// #region Form
+
+/// Input
+$input-colors: (
+   "background": get-color($shades, "white"),
+   "placeholder": get-color($gray, "lighten-2"),
+   "fonts": get-color($gray, "darken-4"),
+   "border": get-color($gray, "lighten-2"),
+   "prefix": get-color($calm, "base"),
+   "icon":  get-color($calm, "base"),
+   "label": get-color($gray, "darken-4"),
+   "focus": (
+      "background": get-color($shades, "white"),
+      "fonts": get-color($gray, "darken-4"),
+      "border": get-color($gray, "lighten-2"),
+      "prefix": get-color($calm, "darken-4"),
+      "icon": get-color($calm, "darken-4"),
+      "label": get-color($gray, "darken-4"),
+   ),
+   "disabled": (
+      "background": get-color($shades, "white"),
+      "fonts": get-color($gray, "lighten-3"),
+      "border": get-color($gray, "lighten-3"),
+      "prefix": get-color($gray, "lighten-3"),
+      "icon": get-color($gray, "lighten-3"),
+      "label": get-color($gray, "lighten-3"),
+   )
+);
+
+/// Radio buttons and Checkboxes
+$radio-colors: (
+   "border":get-color($calm, "base"),
+   "icon": get-color($calm, "base"),
+   "font": get-color($calm, "base"),
+   "checked": (
+      "border": get-color($calm, "base"),
+      "icon": get-color($calm, "base"),
+      "font": get-color($calm, "base")
+   ),
+   "disabled": (
+      "border": get-color($gray, "base"),
+      "icon": get-color($gray, "base"),
+      "font": get-color($gray, "base")
+   )
+);
+
+$select-colors: (
+   "default": (
+      "background": get-color($shades, "white"),
+      "border": get-color($gray, "lighten-2")
+   ),
+   "caret": get-color($gray, "base"),
+   "hover": get-color($gray, "lighten-6"),
+   "selected": get-color($gray, "lighten-3"),
+   "disabled": get-color($gray, "lighten-1")
+);
+
+$dropdown-colors: (
+   "background": get-color($shades, "white"),
+   "border": get-color($gray, "lighten-2"),
+   "font": get-color($gray, "darken-4"),
+   "hover": get-color($gray, "lighten-6"),
+);
+
+$button-colors: (
+   "shared": (
+      "background": get-color($aqua, "base"),
+      "border": get-color($aqua, "base"),
+      "font": get-color($shades, "white"),
+      "hover": (
+         "background": get-color($aqua, "darken-4"),
+         "border": get-color($aqua, "darken-4"),
+         "font": get-color($shades, "white")
+      )
+   ),
+   // "info": (
+   //    "background": get-color($mint, "darken-2"),
+   //    "border": get-color($mint, "darken-2"),
+   //    "font": get-color($shades, "white"),
+   //    "hover": (
+   //       "background": get-color($mint, "darken-4"),
+   //       "border": get-color($mint, "darken-4"),
+   //       "font": get-color($shades, "white")
+   //    )
+   // ),
+   "success": (
+      "background": get-color($blue, "base"),
+      "border": get-color($blue, "base"),
+      "font": get-color($shades, "white"),
+      "hover": (
+         "background": get-color($blue, "darken-4"),
+         "border": get-color($blue, "darken-4"),
+         "font": get-color($shades, "white")
+      )
+   ),
+   "warning": (
+      "background": get-color($orange, "base"),
+      "border": get-color($orange, "base"),
+      "font": get-color($shades, "white"),
+      "hover": (
+         "background": get-color($orange, "darken-4"),
+         "border": get-color($orange, "darken-4"),
+         "font": get-color($shades, "white")
+      )
+   ),
+   "danger": (
+      "background": get-color($red, "base"),
+      "border": get-color($red, "base"),
+      "font": get-color($shades, "white"),
+      "hover": (
+         "background": get-color($red, "darken-4"),
+         "border": get-color($red, "darken-4"),
+         "font": get-color($shades, "white")
+      )
+   ),
+   "link": (
+      "default": get-color($calm, "base"),
+      "hover": get-color($shades, "black")
+   )
+);
+// #endregion
+
+/// Table
+// #region Table
+$table-colors: (
+   "striped": get-color($bw-gamut, "lighten-3"),
+   "font": get-color($gray, "darken-8"),
+   "hover": get-color($gray, "lighten-6"),
+   "success": (
+      "background": #F2FFFE,
+      "font": get-color($gray, "darken-8"),
+   ),
+   "danger": (
+      "background": get-color($red, "lighten-7"),
+      "font": get-color($gray, "darken-8"),
+   ),
+   "header": (
+      "background": get-color($shades, "white"),
+      "font": get-color($gray, "darken-8"),
+   ),
+   "collapsible": (
+      "background": get-color($gray, "lighten-7"),
+      "border": get-color($shades, "transparent"),
+      "font": get-color($gray, "darken-8")
+   )
+);
+// #endregion
+
+/// Paginator
+// #region Paginator
+$paginator-colors: (
+   "arrows": get-color($gray, "darken-4"),
+   "font": get-color($gray, "darken-8"),
+   "active": get-color($aqua, "darken-2"),
+   "disabled": get-color($gray, "lighten-3")
+);
+// #endregion
+
+/// Tabs
+// #region Tabs
+$tabs-colors: (
+   "background": get-color($solidity, "base"),
+   "text": get-color($shades, "white"),
+   "underline": get-color($aqua, "base"),
+   "content": get-color($shades, "white"),
+   "active": (
+      "background":get-color($shades, "white"),
+      "underline": get-color($shades, "transparent"),
+      "text": get-color($calm, "base"),
+   ),
+   "disabled": (
+      "background":get-color($calm, "base"),
+      "underline": get-color($shades, "transparent"),
+      "text": get-color($calm, "base"),
+   )
+);
+// #endregion
+
+/// FSB
+// #region FSB
+$fsb-colors: (
+   "background": #7A7A7A,
+   "underline": get-color($bw-gamut, "base"),
+   "header": (
+      "background": get-color($solidity, "base"),
+      "text": get-color($shades, "white"),
+   ),
+   "content": (
+      "background": get-color($gray, "base"),
+      "text": get-color($shades, "white"),
+   ),
+   "footer": (
+      "background":get-color($bw-gamut, "base"),
+      "text": #7A7A7A,
+   ),
+   "disabled": (
+      "background":get-color($calm, "base"),
+      "text": get-color($calm, "base"),
+   )
+);
+// #endregion
+
+/// Toast
+// #region Toast
+$toast-colors: (
+   "success": get-color($aqua, "lighten-1"),
+   "info": get-color($blue, "lighten-1"),
+   "warning": get-color($orange, "lighten-1"),
+   "danger": get-color($red, "lighten-1")
+);
+// #endregion

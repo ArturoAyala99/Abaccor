@@ -1,0 +1,107 @@
+// Text Align
+.left-align,.text-left {
+	text-align: left !important;
+}
+
+.right-align, .text-right {
+	text-align: right !important;
+}
+
+.center, .center-align, .text-center {
+	text-align: center !important;
+}
+
+.text-justify {
+    text-align: justify !important;
+}
+
+.truncate {
+	display: block;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@media #{$small-only} {
+	.text-left-s {
+		text-align: left !important;
+	}
+	.text-right-s {
+		text-align: right !important;
+	}
+	.text-center-s {
+		text-align: center !important;
+	}
+	.text-justify-s {
+		text-align: justify !important;
+	}
+	.truncate-s {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+@media #{$medium-only}  {
+	.text-left-m {
+		text-align: left !important;
+	}
+	.text-right-m {
+		text-align: right !important;
+	}
+	.text-center-m {
+		text-align: center !important;
+	}
+	.text-justify-m {
+		text-align: justify !important;
+	}
+	.truncate-m {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+@media #{$large-only}  {
+	.text-left-l {
+		text-align: left !important;
+	}
+	.text-right-l {
+		text-align: right !important;
+	}
+	.text-center-l {
+		text-align: center !important;
+	}
+	.text-justify-l {
+		text-align: justify !important;
+	}
+	.truncate-l {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}
+
+@media #{$xlarge-only} {
+	.text-left-xl {
+		text-align: left !important;
+	}
+	.text-right-xl {
+		text-align: right !important;
+	}
+	.text-center-xl {
+		text-align: center !important;
+	}
+	.text-justify-xl {
+		text-align: justify !important;
+	}
+	.truncate-xl {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+}

@@ -1,0 +1,16 @@
+// Materialize source
+@import "../vendors/materialize-v1.0.0/components/typography";
+
+html{
+   @media only screen and (min-width: 0) {
+     font-size: $sm-font-size;
+   }
+ 
+   @media only screen and (min-width: $medium-screen) {
+     font-size: $md-font-size;
+   }
+ 
+   @media only screen and (min-width: $large-screen) {
+     font-size: $lg-font-size
+   }
+ }

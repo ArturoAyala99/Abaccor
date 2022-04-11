@@ -1,0 +1,10 @@
+{
+    /* "sourceType": "unambiguous", */
+    "plugins": [
+        "@babel/plugin-transform-arrow-functions",
+        "@babel/plugin-transform-block-scoping",
+        "@babel/plugin-transform-classes",
+        "@babel/plugin-transform-object-super",
+        "@babel/plugin-transform-template-literals"
+    ]
+}

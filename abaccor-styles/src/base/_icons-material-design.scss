@@ -1,0 +1,18 @@
+// Materialize source
+@import "../vendors/materialize-v1.0.0/components/icons-material-design";
+
+i {
+   color: $icon-color;
+
+   &.left{
+      margin-right: $button-icon-space;
+   }
+
+   &.right{
+      margin-left: $button-icon-space;
+   }
+   &.disabled {
+      color: $input-disabled-solid-color;
+      pointer-events: none;
+   }
+}

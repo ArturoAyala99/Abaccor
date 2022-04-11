@@ -1,0 +1,623 @@
+// ==========================================================================
+// Materialize variables
+// ==========================================================================
+//
+// Table of Contents:
+//
+//  1. Colors
+//  2. Badges
+//  3. Buttons
+//  4. Cards
+//  5. Carousel
+//  6. Collapsible
+//  7. Chips
+//  8. Date + Time Picker
+//  9. Dropdown
+//  10. Forms
+//  11. Global
+//  12. Grid
+//  13. Navigation Bar
+//  14. Side Navigation
+//  15. Photo Slider
+//  16. Spinners | Loaders
+//  17. Tabs
+//  18. Tables
+//  19. Toasts
+//  20. Typography
+//  21. Footer
+//  22. Flow Text
+//  23. Collections
+//  24. Progress Bar
+//  25. Modal
+//  26. Pagination
+//  27. Icon
+//  28. Floating Sheet Button
+
+
+// Prefix
+$element-id: 'abaccor-';
+
+// 1. Colors
+// ==========================================================================
+/* #region Colors */
+$primary-color: color("solidity", "base");
+$primary-color-light: lighten($primary-color, 15%);
+$primary-color-dark: darken($primary-color, 15%);
+
+$secondary-color: color("calm", "base");
+$secondary-color-dark: color("calm", "darken-2");
+$gray-color: color("bw-gamut", "lighten-1");
+$text-color: color("bw-gamut", "darken-2");
+
+$success-color: color("aqua", "base");
+$info-color: color("blue", "base");
+$warning-color: color("orange", "base");
+$error-color: color("orange", "base");
+$link-color: $secondary-color;
+$disabled-color: color("bw-gamut", "lighten-1");
+/* #endregion Colors */
+
+// 2. Badges
+// ==========================================================================
+/* #region Badges */
+$badge-bg-color: $secondary-color;
+
+$badge-height: 22px;
+/* #endregion Badges */
+
+// 3. Buttons
+// ==========================================================================
+/* #region Buttons */
+// Shared styles
+$button-background: get-color($button-colors, "shared", "background");
+$button-border-color: get-color($button-colors, "shared", "border");
+$button-color: get-color($button-colors, "shared", "font");
+$button-background-focus: get-color($button-colors, "shared", "hover", "background");
+$button-border-focus: get-color($button-colors, "shared", "hover", "border");
+$button-color-focus: get-color($button-colors, "shared", "hover", "font");
+$button-border: 1px solid;
+
+$button-font-size: 16px;
+$button-icon-font-size: 1.3rem;
+$button-icon-space: 5px;
+$button-height: 36px;
+$button-padding: 16px;
+$button-radius: 3px;
+$has-shadow: false;
+
+// Disabled styles
+$button-disabled-background: $disabled-color;
+$button-disabled-color: white;
+$button-disabled-border: $disabled-color;
+
+// Raised buttons
+$button-raised-background: transparent;
+$button-raised-background-hover: lighten($secondary-color-dark, 70%);
+$button-raised-color: $secondary-color-dark;
+
+// Success buttons
+$button-success-background-color: get-color($button-colors, "success", "background");
+$button-success-border-color: get-color($button-colors, "success", "border");
+$button-success-color: get-color($button-colors, "success", "font");
+$button-success-background-hover: get-color($button-colors, "success", "hover", "background");
+$button-success-border-hover: get-color($button-colors, "success", "hover", "border");
+$button-success-color-hover: get-color($button-colors, "success", "hover", "font");
+
+// Info buttons
+// $button-info-background-color: get-color($button-colors, "info", "background");
+// $button-info-border-color: get-color($button-colors, "info", "border");
+// $button-info-color: get-color($button-colors, "info", "font");
+// $button-info-background-hover: get-color($button-colors, "info", "hover", "background");
+// $button-info-border-hover: get-color($button-colors, "info", "hover", "border");
+// $button-info-color-hover: get-color($button-colors, "info", "hover", "font");
+
+// Warning buttons
+$button-warning-background-color: get-color($button-colors, "warning", "background");
+$button-warning-border-color: get-color($button-colors, "warning", "border");
+$button-warning-color: get-color($button-colors, "warning", "font");
+$button-warning-background-hover: get-color($button-colors, "warning", "hover", "background");
+$button-warning-border-hover: get-color($button-colors, "warning", "hover", "border");
+$button-warning-color-hover: get-color($button-colors, "warning", "hover", "font");
+
+// Danger buttons
+$button-danger-background-color: get-color($button-colors, "danger", "background");
+$button-danger-border-color: get-color($button-colors, "danger", "border");
+$button-danger-color: get-color($button-colors, "danger", "font");
+$button-danger-background-hover: get-color($button-colors, "danger", "hover", "background");
+$button-danger-border-hover: get-color($button-colors, "danger", "hover", "border");
+$button-danger-color-hover: get-color($button-colors, "danger", "hover", "font");
+
+// Link button
+$button-link-color: get-color($button-colors, "link", "default");
+$button-link-hover: get-color($button-colors, "link", "hover");
+
+// Large buttons
+$button-large-font-size: 18px;
+$button-large-icon-font-size: 1.6rem;
+$button-large-height: $button-height * 1.5;
+$button-floating-large-size: 56px;
+
+// Small buttons
+$button-small-font-size: 13px;
+$button-small-icon-font-size: 1.2rem;
+$button-small-height: $button-height * .9;
+$button-floating-small-size: $button-height * .9;
+
+// Flat buttons
+$button-flat-color: #343434;
+$button-flat-disabled-color: $disabled-color;
+
+// Floating buttons
+$button-floating-background: $secondary-color;
+$button-floating-background-hover: $button-floating-background;
+$button-floating-color: white;
+$button-floating-size: 40px;
+$button-floating-radius: 50%;
+/* #endregion Buttons */
+
+// 4. Cards
+// ==========================================================================
+/* #region Cards */
+$card-bg-color: color("bw-gamut", "lighten-4");
+$card-link-color: color("calm", "base");
+$card-link-color-light:color("calm", "darken-4");
+
+$card-padding: 24px 16px;
+$card-bshadow:  0px 2px 4px rgba(0, 0, 0, 0.6);
+
+// Panel
+$card-panel-border-radius: 3px;
+$card-panel-padding: 16px;
+
+// Size
+$card-small:   300px;
+$card-medium:  400px;
+$card-large:   500px;
+
+/* #endregion Cards */
+
+// 5. Carousel
+// ==========================================================================
+/* #region Carousel */
+$carousel-height: 400px;
+$carousel-item-height: $carousel-height / 2;
+$carousel-item-width: $carousel-item-height;
+/* #endregion Carousel */
+
+// 6. Collapsible
+// ==========================================================================
+/* #region Collapsible */
+$collapsible-height: 3rem;
+$collapsible-line-height: $collapsible-height;
+$collapsible-header-color: #fff;
+$collapsible-border-color: #ddd;
+/* #endregion Collapsible */
+
+// 7. Chips
+// ==========================================================================
+/* #region Chips */
+$chip-bg-color: #e4e4e4;
+$chip-border-color: #9e9e9e;
+$chip-selected-color: #26a69a;
+$chip-margin: 5px;
+/* #endregion Chips */
+
+// 8. Date + Time Picker
+// ==========================================================================
+/* #region Data + Time Picker */
+$datepicker-display-font-size: 2.8rem;
+$datepicker-calendar-header-color: #999;
+$datepicker-weekday-color: rgba(0, 0, 0, .87);
+$datepicker-weekday-bg: darken($secondary-color, 7%);
+$datepicker-date-bg: $secondary-color;
+$datepicker-year: rgba(255, 255, 255, .7);
+$datepicker-focus: rgba(0,0,0, .05);
+$datepicker-selected: $secondary-color;
+$datepicker-selected-outfocus: desaturate(lighten($secondary-color, 35%), 15%);
+$datepicker-day-focus: transparentize(desaturate($secondary-color, 5%), .75);
+$datepicker-disabled-day-color: $disabled-color;
+
+$timepicker-clock-color: rgba(0, 0, 0, .87);
+$timepicker-clock-plate-bg: #eee;
+/* #endregion Data + Time Picker */
+
+// 9. Dropdown
+// ==========================================================================
+/* #region Dropdown */
+$dropdown-bg-color: get-color($dropdown-colors, "background");
+$dropdown-border-color: get-color($dropdown-colors, "border");
+$dropdown-color: get-color($dropdown-colors, "font");
+$dropdown-focus-color: $dropdown-border-color;
+$dropdown-hover-bg-color: get-color($dropdown-colors, "hover");
+
+$dropdown-item-height: 50px;
+$dropdown-border: 1px solid $dropdown-border-color;
+$dropdown-border-radius: 4px;
+/* #endregion Dropdown */
+
+// 10. Forms
+// ==========================================================================
+/* #region Forms */
+// Text Inputs + Textarea
+$inputs:
+   'type',
+   'text',
+   'password',
+   'email',
+   'url',
+   'time',
+   'date',
+   'datetime',
+   'datetime-local',
+   'tel',
+   'number',
+   'search',
+   'textarea'
+;
+
+$placeholder-text-color: get-color($input-colors, "placeholder");
+$input-background: get-color($input-colors, "background");
+$input-color: get-color($input-colors, "fonts");
+$input-border-color: get-color($input-colors, "border");
+$input-icon-prefix-color: get-color($input-colors, "prefix");
+$input-icon-color: get-color($input-colors, "icon");
+$input-label-color: get-color($input-colors, "label");
+
+$input-focus-background: get-color($input-colors, "focus", "background");
+$input-focus-color: get-color($input-colors, "focus", "fonts");
+$input-focus-border-color: get-color($input-colors, "focus", "border");
+$input-focus-icon-prefix-color: get-color($input-colors, "focus", "prefix");
+$input-focus-icon-color: get-color($input-colors, "focus", "icon");
+$input-focus-label-color: get-color($input-colors, "focus", "label");
+
+$input-disabled-background: get-color($input-colors, "disabled", "background");
+$input-disabled-color: get-color($input-colors, "disabled", "fonts");
+$input-disabled-border-color: get-color($input-colors, "disabled", "border");
+$input-disabled-icon-prefix-color: get-color($input-colors, "disabled", "prefix");
+$input-disabled-icon-color: get-color($input-colors, "disabled", "icon");
+$input-disabled-label-color: get-color($input-colors, "disabled", "label");
+
+/* $input-focus-color: $gray-color; */
+$input-icon-focus-color: darken($input-icon-color, 15%);
+$input-label-focus-color: darken($gray-color, 15%);
+
+$input-error-color: $error-color;
+$input-success-color: $success-color;
+/* $input-disabled-color: lighten(color("bw-gamut", "darken-1"), 5%); */
+$input-disabled-solid-color: $disabled-color;
+
+$input-height: 3rem;
+$input-border: 1px solid $input-border-color;
+$input-border-radius: 4px;
+$input-font-size: 16px;
+$input-margin-bottom: 8px;
+$input-margin: 0 0 $input-margin-bottom 0;
+$input-padding: 0.6rem;
+$label-font-size: .8rem;
+$input-icon-size: 2rem;
+$input-disabled-border: 1px dotted $input-disabled-border-color;
+$input-invalid-border: 1px solid $input-error-color;
+
+// Radio Buttons
+$radio-width: 16px;
+$radio-height: $radio-width;
+$radio-fill-color: get-color($radio-colors, "border");
+$radio-empty-color: darken($disabled-color, 25%);
+$radio-border: 2px solid $radio-fill-color;
+
+// With Gap
+$radio-gap-width: 20px;
+$radio-gap-height: $radio-gap-width;
+
+// Range
+$range-height: 14px;
+$range-width: 14px;
+$track-height: 3px;
+
+// Select
+// Default
+$select-background: get-color($select-colors, "default", "background");
+$select-focus-color: get-color($select-colors, "default", "border");
+$select-border-color: get-color($select-colors, "default", "border");
+
+// Dropdown
+$select-option-hover: get-color($select-colors, "hover");
+$select-option-focus: get-color($select-colors, "selected");
+$select-option-selected: get-color($select-colors, "selected");
+$select-caret-color: get-color($select-colors, "caret");
+$select-disabled-color: get-color($select-colors, "disabled");
+
+$select-border: 1px solid $select-border-color;
+$select-focus: 1px solid $select-focus-color;
+$select-padding: 5px;
+$select-radius: 2px;
+
+// Switches
+$switch-bg-color: $secondary-color;
+$switch-checked-lever-bg: desaturate(lighten($switch-bg-color, 45%), 25%);
+$switch-unchecked-bg: #F1F1F1;
+$switch-unchecked-lever-bg: rgba(0,0,0,.38);
+$switch-radius: 15px;
+/* #endregion Forms */
+
+// 11. Global
+// ==========================================================================
+/* #region Globals */
+// Body
+$background-color: color("shades", "white");
+$label-color: darken($gray-color, 50%);
+// Media Query Ranges
+$small-screen-up: 601px;
+$medium-screen-up: 993px;
+$large-screen-up: 1201px;
+$small-screen: 600px;
+$medium-screen: 992px;
+$large-screen: 1200px;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})";
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})";
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})";
+$small-and-down: "only screen and (max-width : #{$small-screen})";
+$medium-and-down: "only screen and (max-width : #{$medium-screen})";
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})";
+/* #endregion Globals */
+
+// 12. Grid
+// ==========================================================================
+/* #region Grid */
+$num-cols: 12;
+$gutter-width: 1.5rem;
+$element-top-margin: $gutter-width/3;
+$element-bottom-margin: ($gutter-width*2)/3;
+
+// XY Grid
+$element-top-margin: $gutter-width / 3;
+$element-bottom-margin: ($gutter-width * 2) / 3;
+$grid-selector: '[component="grid-container"]';
+$grid-x-selector: '[component="grid-x"]';
+$grid-y-selector: '[component="grid-y"]';
+$grid-cell-selector: '[component="cell"]';
+/* #endregion Grid */
+
+// 13. Navigation Bar
+// ==========================================================================
+/* #region Navbar */
+$navbar-height: 80px;
+$navbar-line-height: $navbar-height;
+$navbar-height-mobile: 56px;
+$navbar-line-height-mobile: $navbar-height-mobile;
+$navbar-font-size: 1rem;
+$navbar-font-color: #fff;
+$navbar-border-radius: 3px 3px 0px 0px;
+$navbar-brand-font-size: 1.5rem;
+$navbar-breadcrumb-color: #FFFFFF;
+$navbar-breadcrumb-last-color: #fff;
+$navbar-breadcrumb-font-size: 16px;
+$navbar-breadcrumb-last-font-size: 18px;
+$navbar-btn-width: 56px;
+$navbar-btn-height: 42px;
+$navbar-btn-width-mobile: 40px;
+$navbar-btn-height-mobile: 40px;
+$navbar-btn-bg-color: #2F3235;
+$navbar-btn-hv-bg-color: #3D3D3D;
+/* #endregion Navbar */
+
+// 14. Side Navigation
+// ==========================================================================
+/* #region Sidenav */
+// Colors
+$sidenav-bg-color: get-color($sidenav-colors, 'background');
+$sidenav-font-color: get-color($sidenav-colors, 'fonts');
+$sidenav-menu-hv-bg-color: get-color($sidenav-colors, 'menu', 'hover', 'background');
+$sidenav-menu-hv-ft-color: get-color($sidenav-colors, 'menu', 'hover', 'fonts');
+$sidenav-menu-act-bg-color: get-color($sidenav-colors, 'menu', 'active', 'background');
+$sidenav-menu-act-ft-color: get-color($sidenav-colors, 'menu', 'active', 'fonts');
+$sidenav-submenu-bg-color: get-color($sidenav-colors, 'submenu', 'background');
+$sidenav-submenu-hv-bg-color: get-color($sidenav-colors, 'submenu', 'hover', 'background');
+$sidenav-submenu-hv-ft-color: get-color($sidenav-colors, 'submenu', 'hover', 'fonts');
+$sidenav-submenu-act-bg-color: get-color($sidenav-colors, 'submenu', 'active', 'background');
+$sidenav-submenu-act-ft-color: get-color($sidenav-colors, 'submenu', 'active', 'fonts');
+$sidenav-active-color: get-color($sidenav-colors, "item");
+$sidenav-link-active-color: get-color($sidenav-colors, 'menu', 'hover', 'fonts');
+
+$sidenav-width: 250px;
+$sidenav-compacted-width: 49px;
+$sidenav-font-size: 14px;
+$sidenav-padding: 13px;
+$sidenav-item-height: 48px;
+$sidenav-line-height: $sidenav-item-height;
+/* #endregion Sidenav */
+
+// 15. Photo Slider
+// ==========================================================================
+/* #region Slider */
+$slider-bg-color: color('bw-gamut', 'lighten-1');
+$slider-bg-color-light: color('bw-gamut', 'lighten-2');
+$slider-indicator-color: color('mint', 'base');
+/* #endregion Slider */
+
+// 16. Spinners | Loaders
+// ==========================================================================
+/* #region Spinners */
+$spinner-default-color: $secondary-color;
+/* #endregion Spinners */
+
+// 17. Tabs
+// ==========================================================================
+/* #region Tabs */
+$tabs-underline-color: get-color($tabs-colors, 'underline');
+$tabs-text-color: get-color($tabs-colors, 'text');
+$tabs-bg-color: get-color($tabs-colors, 'background');
+$tabs-bg-content-color: get-color($tabs-colors, 'content');
+
+$tabs-act-underline-color: get-color($tabs-colors, 'active', 'underline');
+$tabs-act-text-color: get-color($tabs-colors,'active', 'text');
+$tabs-act-bg-color:get-color($tabs-colors,'active', 'background');
+
+
+// Panel
+$tabs-panel-border-radius: 3px;
+$tabs-panel-padding: 16px;
+
+// Size
+$tabs-small:   200px;
+$tabs-medium:  350px;
+$tabs-large:   500px;
+
+/* #endregion Tabs */
+
+// 18. Tables
+// ==========================================================================
+/* #region Tables */
+$table-striped-color: get-color($table-colors, "striped");
+$table-tbody-color: get-color($table-colors, "font");
+$table-border-color: rgba(0,0,0,.12);
+$table-hover-color: get-color($table-colors, "hover");
+
+$table-th-background-color: get-color($table-colors, "header", "background");
+$table-thead-color: get-color($table-colors, "header", "font");
+
+$table-collapsible-color: get-color($table-colors, "collapsible", "font");
+$table-collapsible-border-color: get-color($table-colors, "collapsible", "border");
+$table-collapsible-background-color: get-color($table-colors, "collapsible", "background");
+$table-success-background-color: get-color($table-colors, "success", "background");
+$table-danger-background-color: get-color($table-colors, "danger", "background");
+
+$table-th-height: 56px;
+$table-floating-height-collapsible: $table-th-height * 2;
+$table-floating-height-navbar-fixed: $navbar-height + $table-th-height;
+$table-floating-height-collapsible-navbar-fixed: $navbar-height + $table-floating-height-collapsible;
+$table-tr-height: 40px;
+$table-border: 3px;
+/* #endregion Tables */
+
+// 19. Toasts
+// ==========================================================================
+/* #region Toasts */
+$toast-height: 48px;
+$toast-color: #323232;
+$toast-text-color: #fff;
+$toast-action-color:  #26a69a;
+/* #endregion Toasts */
+
+// 20. Typography
+// ==========================================================================
+/* #region Typography */
+$font-url: "../fonts/montserrat";
+$font-stack: Montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$off-black: rgba(0, 0, 0, 0.87);
+$sm-font-size: 12px;
+$md-font-size: 13.5px;
+$lg-font-size: 14px;
+// Header Styles
+$h1-fontsize: 4.2rem;
+$h2-fontsize: 3.56rem;
+$h3-fontsize: 2.92rem;
+$h4-fontsize: 2.28rem;
+$h5-fontsize: 1.64rem;
+$h6-fontsize: 1.15rem;
+/* #endregion Typography */
+
+// 21. Footer
+// ==========================================================================
+/* #region Footers */
+$footer-font-color: #BCBCBC;
+$footer-bg-color: lighten($primary-color, 21%);
+$footer-copyright-font-color: rgba(255,255,255,.8);
+$footer-copyright-bg-color: $footer-bg-color;
+$footer-min-height: 31px;
+$footer-buttons-width: 100px;
+$footer-copyright-width: calc(100% - #{$footer-buttons-width});
+/* #endregion Footers */
+
+// 22. Flow Text
+// ==========================================================================
+/* #region Flow Text */
+$range : $large-screen - $small-screen;
+$intervals: 20;
+$interval-size: $range / $intervals;
+/* #endregion Flow Text */
+
+// 23. Collections
+// ==========================================================================
+/* #region Collections */
+$collection-border-color: #e0e0e0;
+$collection-bg-color: #fff;
+$collection-active-bg-color: $secondary-color;
+$collection-active-color: lighten($secondary-color, 55%);
+$collection-hover-bg-color: #ddd;
+$collection-link-color: $secondary-color;
+$collection-line-height: 1.5rem;
+/* #endregion Collections */
+
+// 24. Progress Bar
+// ==========================================================================
+/* #region Progress Bar */
+$progress-bar-color: $secondary-color;
+/* #endregion Progress Bar */
+
+// 25. Modal
+// ==========================================================================
+/* #region Modal */
+$modal-header-height: 63px;
+$modal-header-height-vh: 80px;
+$modal-footer-height: 56px;
+$modal-height-padding: $modal-header-height + $modal-footer-height;
+$modal-height-padding-vh: $modal-header-height-vh + $modal-footer-height;
+$modal-floating-padding: -26px;
+$modal-floating-padding-vh: $modal-header-height-vh - $table-th-height;
+$modal-width: 423px;
+$modal-border-radius: 3px;
+$modal-alert-height: 200px;
+
+/* #endregion Modal */
+
+// 26. Pagination
+// ==========================================================================
+/* #region Pagination */
+$pagination-arrows: get-color($paginator-colors, "arrows");
+$pagination-color: get-color($paginator-colors, "font");
+$pagination-active: get-color($paginator-colors, "active");
+$pagination-disabled: get-color($paginator-colors, "disabled");
+/* #endregion Pagination */
+
+// 27. Icons
+// ==========================================================================
+/* #region Icons */
+$icon-color: get-color($input-colors, "icon");
+/* #endregion Icons */
+
+
+//  28. Floating Sheet Button
+// ==========================================================================
+/* #region  Floating */
+
+$fsb-bg-color: get-color($fsb-colors, "background");
+$fsb-underline-color: get-color($fsb-colors, "underline");
+
+$fsb-button-width:65px;
+$fsb-content-width: 265px;
+
+//header
+$fsb-bg-header-color: get-color($fsb-colors, "header","background");
+$fsb-header-color: get-color($fsb-colors, "header","text");
+$fsb-header-height: 70px;
+
+//content
+$fsb-bg-content-color: get-color($fsb-colors, "content","background");
+$fsb-content-color: get-color($fsb-colors, "content","text");
+
+//footer
+$fsb-bg-footer-color: get-color($fsb-colors, "footer","background");
+$fsb-footer-color: get-color($fsb-colors, "footer","text");
+$fsb-footer-height: 65px;
+
+//size
+$fsb-small:   265px;
+$fsb-medium:  300px;
+$fsb-large:   400px;
+
+$fsb-small-mobile:   265px;
+$fsb-medium-mobile:  300px;
+$fsb-large-mobile:   320px;
+/* #endregion  Floating */

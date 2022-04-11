@@ -1,0 +1,145 @@
+// Materialize source
+@import "../vendors/materialize-v1.0.0/components/collapsible";
+
+.collapsible-header {
+   &:focus {
+      outline: 0
+   }
+}
+
+.collapsible-body {
+   overflow-x: auto;
+}
+
+.sidenav,
+.sidenav.fixed {
+
+   > .collapsible{
+      background-color: color("bw-gamut", "lighten-4");
+   }
+
+   .collapsible {
+      li {
+         padding: 0;
+
+         &.active>.collapsible-header {
+            background-color: $sidenav-menu-act-bg-color;
+            i {
+               color: $sidenav-menu-act-ft-color;
+
+               hr,
+               .hr {
+                  border-color: $sidenav-menu-act-ft-color;
+               }
+            }
+
+            .menu-label{
+               color: $sidenav-menu-act-ft-color;
+            }
+         }
+      }
+
+      &.menus {
+         background-color: $sidenav-submenu-bg-color;
+         box-shadow: inset 0px 1px 6px 0 rgba(0, 0, 0, 0.253);
+      }
+   }
+
+   .collapsible-header {
+      &:hover {
+         background-color: $sidenav-menu-hv-bg-color;
+         i {
+            color: $sidenav-menu-hv-ft-color;
+
+            hr,
+            .hr {
+               border-color: $sidenav-menu-hv-ft-color;
+            }
+         }
+
+         .menu-label{
+            color: $sidenav-menu-hv-ft-color;
+         }
+      }
+
+      i {
+         color: $sidenav-font-color;
+         line-height: inherit;
+
+         hr,
+         .hr {
+            border: 2px solid $sidenav-font-color;
+            width: 100%;
+            margin-top: -11px;
+         }
+      }
+   }
+
+   .collapsible-body:empty {
+      display: none;
+   }
+
+   .collapsible-body {
+      li {
+         >a {
+
+            padding: 0px;
+
+            >.collapsible-header {
+               &:hover>.menu-label {
+                  /* padding: 0px 10px; */
+               }
+
+               /* i {
+                  color: $sidenav-active-color;
+
+                  hr,
+                  .hr {
+                     border-color: $sidenav-active-color;
+                  }
+               } */
+            }
+         }
+
+         &:hover {
+            >a {
+               .collapsible-header {
+                  background-color: $sidenav-submenu-hv-bg-color;
+                  i {
+                     color: $sidenav-submenu-hv-ft-color;
+
+                     hr,
+                     .hr {
+                        border-color: $sidenav-submenu-hv-ft-color;
+                     }
+                  }
+
+                  .menu-label{
+                     color: $sidenav-submenu-hv-ft-color;
+                  }
+               }
+            }
+         }
+
+         &.active {
+            >a {
+               .collapsible-header {
+                  background-color: $sidenav-submenu-act-bg-color;
+                  i {
+                     color: $sidenav-submenu-act-ft-color;
+
+                     hr,
+                     .hr {
+                        border-color: $sidenav-submenu-act-ft-color;
+                     }
+                  }
+
+                  .menu-label{
+                     color: $sidenav-submenu-act-ft-color;
+                  }
+               }
+            }
+         }
+      }
+   }
+}

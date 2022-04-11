@@ -1,0 +1,85 @@
+// Materialize source
+@import "../vendors/materialize-v1.0.0/components/grid";
+
+.container {
+   &.full{
+      width: 90%;
+   }
+
+   &.fluid{
+      width: 100%;
+   }
+}
+/* .#{$element-id}container {
+   @extend .container;
+
+   &.fluid{
+      width: 100%;
+   }
+
+   &.full{
+      width: 90%;
+   }
+
+   &.clear-fixed-footer{
+      margin-bottom: $footer-min-height + 10;
+   }
+}
+
+@media #{$medium-and-up} {
+   .#{$element-id}container {
+      &.fluid{
+         width: 100%;
+      }
+   
+      &.full{
+         width: 90%;
+      }
+   }
+}
+
+@media #{$large-and-up} {
+   .#{$element-id}container {
+      &.fluid{
+         width: 100%;
+      }
+   
+      &.full{
+         width: 90%;
+      }
+   }
+
+   .#{$element-id}sidenav+.#{$element-id}container {
+
+      &.fluid{
+         width: 100%;
+      }
+   
+      &.full{
+         width: 90%;
+      }
+   }
+}
+
+@media #{$extra-large-and-up} {
+   .#{$element-id}container {
+      &.fluid{
+         width: 100%;
+      }
+   
+      &.full{
+         width: 90%;
+      }
+   }
+
+   .#{$element-id}sidenav+.#{$element-id}container {
+
+      &.fluid{
+         width: 100%;
+      }
+   
+      &.full{
+         width: 90%;
+      }
+   }
+} */

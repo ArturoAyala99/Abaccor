@@ -1,0 +1,12 @@
+$global-width: rem-calc(1200);
+$global-flexbox: true;
+
+/// Sets the text direction of the CSS. Can be either `ltr` or `rtl`.
+/// @type Keyword
+$global-text-direction: ltr !default;
+
+// Internal variables used for text direction
+$global-left: if($global-text-direction == rtl, right, left);
+$global-right: if($global-text-direction == rtl, left, right);
+
+$breakpoint-classes: (small medium large);

@@ -1,0 +1,231 @@
+.card-panel {
+	padding: $card-panel-padding;
+	background-color: get-color($cards-colors, "panel", "background");
+	box-shadow: $card-bshadow;
+}
+
+.card {
+	background-color: $card-bg-color;
+	.card-content {
+		p { margin: 0; }
+	}
+}
+
+.card,
+.card-panel {
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	transition: box-shadow .25s;
+	margin: $element-top-margin 0 $element-bottom-margin 0;
+	border-radius: $card-panel-border-radius;
+	@extend .z-depth-1;
+
+	.card-header {
+		padding: 0.5rem 1.5rem;
+		min-height: 4rem;
+		background-color: get-color($cards-colors, "header", "background");
+		color: get-color($cards-colors, "header", "font");
+		border-bottom: 1px solid get-color($cards-colors, "header", "border");
+		border-radius: $card-panel-border-radius $card-panel-border-radius 0 0;
+
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 29px;
+
+		.card-icon {
+			position: absolute;
+			font-size: 35px;
+			padding-top: 5px;
+			+.card-title,
+			+.card-subtitle,
+			+.card-title + .card-subtitle {
+				padding-left: 40px;
+			}
+		}
+
+		.card-title {
+			font-size: 24px;
+			margin: 0;
+		  }
+
+		.card-subtitle {
+			font-size: 14px;
+			margin: 0;
+		}
+
+	}
+
+	.card-title {
+		font-size: 24px;
+		font-weight: 300;
+		&.activator { cursor: pointer; }
+	}
+
+	// Card Sizes
+	&.small, &.medium, &.large {
+		overflow-y: auto;
+		.card-image {
+			max-height: 40%;
+			overflow: hidden;
+		}
+
+		.card-content {
+			height: inherit;
+		}
+
+		.card-action {
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+
+	&.small {
+		height: $card-small;
+	}
+
+	&.medium {
+		height: $card-medium;
+	}
+
+	&.large {
+		height: $card-large;
+	}
+
+	// Horizontal Cards
+	&.horizontal {
+		flex-direction: initial;
+
+		&.right {
+			flex-direction: row-reverse;
+			.card-image {
+				img {
+					border-radius: 0 2px 2px 0;
+				}
+			}
+		}
+		&.small, &.medium, &.large {
+			.card-image {
+				height: 100%;
+				max-height: none;
+				overflow: visible;
+				img {
+					min-height: 100%;
+				}
+			}
+		}
+
+		.card-image {
+			max-width: 50%;
+			img {
+				border-radius: 2px 0 0 2px;
+				max-width: 100%;
+				width: auto;
+				min-height: 100%;
+			}
+		}
+
+		.card-stacked {
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+			position: relative;
+
+			.card-content {
+				flex-grow: 1;
+			}
+		}
+	}
+
+	// Sticky Action Section
+	&.sticky-action {
+		.card-action {
+		z-index: 2;
+		}
+
+		.card-reveal {
+		z-index: 1;
+		padding-bottom: 64px;
+		}
+	}
+
+	.card-image {
+		position: relative;
+
+		// Image background for content
+		img {
+			display: block;
+			border-radius: 2px 2px 0 0;
+			position: relative;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
+		.card-title {
+			color: $card-bg-color;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			max-width: 100%;
+			padding: $card-padding;
+			background-color: transparent;
+		}
+	}
+
+	.card-content {
+		padding: $card-padding;
+		border-radius: 0 0 2px 2px;
+		overflow-y: auto;
+
+		.card-title {
+			display: block;
+			line-height: 32px;
+			margin-bottom: 8px;
+			i { line-height: 32px; }
+		}
+	}
+
+	.card-action {
+		&:last-child { border-radius: 0 0 2px 2px; }
+		background-color: inherit; // Use inherit to inherit color classes
+		border-top: 1px solid get-color($cards-colors, "header", "border");
+		color: get-color($cards-colors, "header", "font");
+		text-align: right;
+		position: relative;
+		padding: 16px $card-padding;
+
+		> * { margin: 6px 2px; }
+
+		a:not(.btn):not(.btn-large):not(.btn-floating) {
+			color: $card-link-color;
+			margin-right: $card-padding;
+			transition: color .3s ease;
+
+			&:hover { color: $card-link-color-light; }
+		}
+	}
+
+	.card-reveal {
+		padding: $card-padding;
+		position: absolute;
+		background-color: $card-bg-color;
+		width: 100%;
+		overflow-y: auto;
+		left: 0;
+		top: 100%;
+		height: 100%;
+		z-index: 3;
+		display: none;
+
+		.card-title {
+			cursor: pointer;
+			display: block;
+		}
+	}
+}

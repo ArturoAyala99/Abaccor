@@ -1,0 +1,128 @@
+.tabs {
+
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 48px;
+    width: 100%;
+    background-color: $tabs-bg-color;
+    margin: 0 auto;
+    white-space: nowrap;
+    display: flex;
+
+    &.tabs-transparent {
+        background-color: transparent;
+
+        .tab a,
+        .tab.disabled a,
+        .tab.disabled a:hover {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .tab a:hover,
+        .tab a.active {
+            color: #fff;
+        }
+
+        .indicator {  background-color: #fff; }
+    }
+
+    &.small + .tabs-content {
+		height: $tabs-small;
+	}
+
+	&.medium + .tabs-content {
+        height: $tabs-medium;
+	}
+
+	&.large + .tabs-content {
+		height: $tabs-large;
+    }
+
+    &.tabs-scrolling {
+        overflow-x: auto;
+    }
+
+    .tab {
+        display: inline-block;
+        text-align: center;
+        line-height: 48px;
+        height: 48px;
+        padding: 0;
+        margin: 0;
+        text-transform: uppercase;
+        flex-grow: 1;
+
+        a {
+            color: $tabs-text-color;
+            border-bottom: 2px solid $tabs-underline-color;
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0 24px;
+            font-size: 14px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            transition: color .28s ease, background-color .28s ease;
+
+            &:focus {
+                background-color: transparentize($tabs-underline-color, .8);
+            }
+
+            &:hover {
+                background-color: transparent;
+                color: $tabs-text-color;
+            }
+
+            &.active {
+                background-color: $tabs-act-bg-color !important;
+                color: $tabs-act-text-color;
+                border-bottom: $tabs-act-underline-color;
+            }
+        }
+
+        &.disabled a,
+        &.disabled a:hover {
+            color: rgba($tabs-text-color, .4);
+            cursor: default;
+        }
+    }
+    .indicator {
+      display: none;
+    }
+}
+
+.tabs-content {
+    height: auto;
+    > * {
+        background-color: $tabs-bg-content-color;
+        padding: 0.75rem  16px !important;
+        height: inherit;
+        overflow-y: auto;
+    }
+}
+
+.tabs-panel {
+    margin-top: $element-top-margin;
+    border-radius: $card-panel-border-radius $card-panel-border-radius 0 0;
+    box-shadow: 0px 4px 0px 0px #ffffff,
+    0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+
+    +.tabs-content > div {
+        margin-bottom: $element-bottom-margin;
+        border-radius: $card-panel-border-radius;
+        @extend .z-depth-1;
+    }
+}
+
+// Fixed Sidenav hide on smaller
+@media #{$medium-and-down} {
+    .tabs {
+        display: flex;
+
+        .tab {
+            flex-grow: 1;
+            a { padding: 0 12px; }
+        }
+    }
+}

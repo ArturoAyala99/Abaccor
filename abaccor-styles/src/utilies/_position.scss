@@ -1,0 +1,48 @@
+// Positioning
+.valign-wrapper {
+	display: flex;
+	align-items: center;
+}
+
+.left {
+	float: left !important;
+}
+.right {
+	float: right !important;
+}
+
+@media #{$small-only} {
+	.left-s {
+		float: left !important;
+	}
+	.right-s {
+		float: right !important;
+	}
+}
+
+@media #{$medium-only}  {
+	.left-m {
+		float: left !important;
+	}
+	.right-m {
+		float: right !important;
+	}
+}
+
+@media #{$large-only}  {
+	.left-l {
+		float: left !important;
+	}
+	.right-l {
+		float: right !important;
+	}
+}
+
+@media #{$xlarge-only} {
+	.left-xl {
+		float: left !important;
+	}
+	.right-xl {
+		float: right !important;
+	}
+}

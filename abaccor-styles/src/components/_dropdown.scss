@@ -1,0 +1,21 @@
+// Materialize source
+@import "../vendors/materialize-v1.0.0/components/dropdown";
+
+.dropdown-content{
+   border: $dropdown-border;
+   box-shadow: 0 0px 0px 1px $dropdown-focus-color;
+   border-radius: $dropdown-border-radius;
+}
+
+.clv-dropdown {
+   position: relative;
+   display: inline-block;
+}
+
+.clv-dropdown-content {
+   position: absolute;
+   width: max-content;
+}
+
+.clv-dropdown-content-top { top: 3em !important; }
+.clv-dropdown-content-top-icon { top: 2.3em !important; }

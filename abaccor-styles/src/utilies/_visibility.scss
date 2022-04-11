@@ -1,0 +1,129 @@
+.show {
+    display: block !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+@media #{$small-only} {
+	.show-s {
+		display: block !important;
+	}
+	.hide-s {
+		display: none !important;
+	}
+}
+
+@media #{$medium-only}  {
+	.show-m {
+		display: block !important;
+	}
+	.hide-m {
+		display: none !important;
+	}
+}
+
+@media #{$large-only}  {
+	.show-l {
+		display: block !important;
+	}
+	.hide-l {
+		display: none !important;
+	}
+}
+
+@media #{$xlarge-only} {
+	.show-xl {
+		display: block !important;
+	}
+	.hide-xl {
+		display: none !important;
+	}
+}
+
+.hide-m-down {
+    @media #{$medium-and-down} {
+        display: none !important;
+    }
+}
+
+.hide-m-up {
+    @media #{$medium-and-up} {
+        display: none !important;
+    }
+}
+
+.show-m-up {
+    @media #{$medium-and-up} {
+        display: block !important;
+    }
+}
+
+.show-m-down {
+    @media #{$medium-and-down} {
+        display: block !important;
+    }
+}
+
+//Deprecated
+.hide-on-small-only, .hide-on-small-and-down {
+    @media #{$small-and-down} {
+        display: none !important;
+    }
+}
+.hide-on-med-and-down {
+    @media #{$medium-and-down} {
+        display: none !important;
+    }
+}
+.hide-on-med-and-up {
+    @media #{$medium-and-up} {
+        display: none !important;
+    }
+}
+.hide-on-med-only {
+    @media only screen and (min-width: $small-screen) and (max-width: $medium-screen) {
+        display: none !important;
+    }
+}
+.hide-on-large-only {
+    @media #{$large-and-up} {
+        display: none !important;
+    }
+}
+.hide-on-extra-large-only {
+    @media #{$extra-large-and-up} {
+        display: none !important;
+    }
+}
+.show-on-extra-large {
+    @media #{$extra-large-and-up} {
+        display: block !important;
+    }
+}
+.show-on-large {
+    @media #{$large-and-up} {
+        display: block !important;
+    }
+}
+.show-on-medium {
+    @media only screen and (min-width: $small-screen) and (max-width: $medium-screen) {
+        display: block !important;
+    }
+}
+.show-on-small {
+    @media #{$small-and-down} {
+        display: block !important;
+    }
+}
+.show-on-medium-and-up {
+    @media #{$medium-and-up} {
+        display: block !important;
+    }
+}
+.show-on-medium-and-down {
+    @media #{$medium-and-down} {
+        display: block !important;
+    }
+}

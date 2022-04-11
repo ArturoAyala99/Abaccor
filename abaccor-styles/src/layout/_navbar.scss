@@ -1,0 +1,210 @@
+// Materialize source
+@import "../vendors/materialize-v1.0.0/components/navbar";
+
+nav {
+	border-radius: $navbar-border-radius;
+	background-color: $primary-color !important;
+
+
+	.breadcrumbs{
+		position: relative;
+		padding: 0 4rem;
+		text-align: center;
+	}
+}
+
+nav.abaccor-navbar > .nav-wrapper  {
+	display: flex;
+	.btn-sidenav {
+		@extend .pointer;
+		color: $success-color;
+		display: inline-block !important;
+		position: relative;
+		user-select: none;
+
+		>.material-icons {
+			color: $success-color;
+			font-size: 2.5rem;
+		}
+	}
+	>ul {
+		display: flex;
+		&.left > li {
+			.module-title {
+				font-style: normal;
+				font-weight: 500;
+				font-size: 20px;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				letter-spacing: 0.02em;
+				text-transform: uppercase;
+				margin-bottom: 14px;
+				padding-left: 12px;
+			}
+			.submodule-title {
+				font-style: normal;
+				font-size: 14px;
+				line-height: 15px;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				letter-spacing: 0.02em;
+				padding-left: 12px;
+				.breadcrumb {
+					padding: 0;
+					font-style: normal;
+					font-size: 14px;
+					letter-spacing: 0.02em;
+				}
+			}
+		}
+		&.right {
+			margin-left: auto;
+		}
+	}
+
+	.btn {
+		background-color: $navbar-btn-bg-color;
+		border: 1px solid #FFFFFF;
+		height: $navbar-btn-height;
+		width: $navbar-btn-width;
+		line-height: $navbar-btn-height;
+		margin-left: 12px;
+		margin-right: 12px;
+
+		&:focus, &:hover {
+			background-color: $navbar-btn-hv-bg-color;
+			border: 1px solid #FFFFFF;
+		}
+	}
+
+	.btn-profile {
+		width: $navbar-btn-height;
+		height: $navbar-btn-height;
+		line-height: $navbar-btn-height;
+		padding: 0;
+		border-radius: 50%;
+		transition: background-color .3s;
+		vertical-align: middle;
+		border: none;
+		> i {
+			margin-right: -4px;
+			margin-top: -1px;
+			font-size: 48px;
+			float: right;
+		}
+		&:focus, &:hover {
+			background: #FFFFFF;
+			> i { color: $navbar-btn-hv-bg-color; }
+		}
+	}
+	}
+
+	@media #{$small-only} {
+	nav.abaccor-navbar > .nav-wrapper {
+		a+ul.left > li {
+			.module-title,
+			.submodule-title {
+				padding-left: 12px;
+			}
+		}
+		> ul.left {
+			margin-left: -20px;
+			width: 60%;
+			> li {
+				.module-title {
+					font-size: 11px;
+					line-height: 11px;
+					margin-bottom: 2px;
+					padding-left: 24px;
+				}
+				.submodule-title {
+					font-size: 8px;
+					line-height: 10px;
+					padding-left: 24px;
+					.breadcrumb { font-size: 9px; }
+				}
+			}
+		}
+	}
+}
+
+@media #{$medium-only} {
+	nav.abaccor-navbar > .nav-wrapper > ul.left {
+		width: 80%;
+		> li {
+			.module-title {
+			font-size: 17px;
+			}
+			.submodule-title {
+			font-size: 12px;
+			}
+		}
+	}
+}
+
+@media #{$medium-and-down} {
+	nav.abaccor-navbar > .nav-wrapper {
+
+		.btn-sidenav {
+			margin-left: 0;
+		}
+
+		> ul.left > li > .submodule-title > .breadcrumb {
+			display: none;
+			&:first-child {
+				display: inline-block;
+			}
+		}
+		> ul.right {
+			position: absolute;
+			right: 1px;
+
+			.btn {
+				width: $navbar-btn-width-mobile;
+				height: $navbar-btn-height-mobile;
+				margin-left: 1px;
+				margin-right: 5px;
+				padding: 0;
+			}
+		}
+	}
+}
+@media #{$medium-and-up} {
+	nav {
+		.breadcrumbs{
+			text-align: left;
+			position: relative;
+			display: inline-block;
+			padding-right: 10px;
+			background-color: $primary-color;
+			z-index: 1;
+
+			.breadcrumb {
+				@include not(':first-of-type', ':last-of-type'){
+					display: inline-block;
+				}
+
+				&::before{ margin: 0; }
+
+				&:last-of-type::before{
+					content: '\E5CC';
+					vertical-align: top;
+					font-size: 25px;
+				}
+			}
+		}
+
+		.line{
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			overflow: hidden;
+			background-color: color("bw-gamut", "lighten-3");
+			z-index: 0;
+		}
+	}
+}
