@@ -21,7 +21,7 @@
    }
 
    //output the full :not() rule including all ignored items
-   &#{$notOutput} {
+   #{$notOutput} {
       @content;
    }
 }
@@ -55,7 +55,7 @@
       $count: $count + 1;
    }
 
-   &#{$onlyOutput} {
+   #{$onlyOutput} {
       @content;
    }
 }

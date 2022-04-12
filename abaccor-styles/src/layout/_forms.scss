@@ -97,9 +97,7 @@ label {
       }
    }
 
-   input[type=password] {
-      @extend input[type=search];
-   }
+
 
    &.col label,
    &:not(.col) label {

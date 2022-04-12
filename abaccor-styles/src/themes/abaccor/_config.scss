@@ -180,7 +180,7 @@ $card-large:   500px;
 // ==========================================================================
 /* #region Carousel */
 $carousel-height: 400px;
-$carousel-item-height: $carousel-height / 2;
+$carousel-item-height: calc($carousel-height / 2); /* $carousel-height / 2;  */
 $carousel-item-width: $carousel-item-height;
 /* #endregion Carousel */
 
@@ -367,12 +367,12 @@ $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width 
 /* #region Grid */
 $num-cols: 12;
 $gutter-width: 1.5rem;
-$element-top-margin: $gutter-width/3;
-$element-bottom-margin: ($gutter-width*2)/3;
+$element-top-margin:calc($gutter-width / 3); //$gutter-width/3
+$element-bottom-margin: calc(($gutter-width * 2) / 3); //($gutter-width*2)/3
 
 // XY Grid
-$element-top-margin: $gutter-width / 3;
-$element-bottom-margin: ($gutter-width * 2) / 3;
+$element-top-margin: calc($gutter-width / 3); //$gutter-width / 3
+$element-bottom-margin: calc(($gutter-width * 2) / 3); //($gutter-width * 2) / 3
 $grid-selector: '[component="grid-container"]';
 $grid-x-selector: '[component="grid-x"]';
 $grid-y-selector: '[component="grid-y"]';
@@ -535,7 +535,7 @@ $footer-copyright-width: calc(100% - #{$footer-buttons-width});
 /* #region Flow Text */
 $range : $large-screen - $small-screen;
 $intervals: 20;
-$interval-size: $range / $intervals;
+$interval-size: calc($range / $intervals); //$range / $intervals
 /* #endregion Flow Text */
 
 // 23. Collections

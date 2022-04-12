@@ -80,11 +80,10 @@ const minifyConfig = {
 // Compile scss Files
  gulp.task('sass', function (cb) {
 
-	
-	gulp.src(minifyConfig.css)
-		.pipe(sass().on('error', sass.logError)) //correr el archivo que está en sass/cal.scss 
-		.pipe(autoprefixer('last 4 versions'))
-		.pipe(cleanCSS({compatibility: 'last 4 versions'}))
+		gulp.src(minifyConfig.css)
+		.pipe(sass(minifyConfig.options))
+		.pipe(rename({ extname: '.min.css' }))
+		.pipe(autoprefixer())
 		.pipe(gulp.dest(minifyConfig.output.css));
 	cb();
 });
@@ -166,36 +165,14 @@ gulp.task('watcher', function() {
 
 function sasss(cb) {
     
-   /* gulp.src('./sass/*.scss') //aquí se le dice a la tarea en dónde va a buscar los archivos de sass. DEFINIENDO LA RUTA
-            
-        .pipe(sass().on('error', sass.logError)) //correr el archivo que está en sass/cal.scss 
-        .pipe(autoprefixer('last 4 versions'))
-        .pipe(cleanCSS({compatibility: 'last 4 versions'}))
-            
-        .pipe(gulp.dest('./dist/css'))
-
-    cb();
- */
 	gulp.src(minifyConfig.css)
-		.pipe(sass().on('error', sass.logError)) //correr el archivo que está en sass/cal.scss 
+		.pipe(sass(minifyConfig.options))
 		.pipe(autoprefixer('last 4 versions'))
-		.pipe(cleanCSS({compatibility: 'last 4 versions'}))
 		.pipe(gulp.dest(minifyConfig.output.css));
 	cb();
 }
 
 function javascript(cb) {
-   
-   /*  gulp.src(['./scripts/cal.js', './scripts/index.js']) //aquí se le dice a la tarea en dónde va a buscar los archivos de sass. DEFINIENDO LA RUTA
-                
-        .pipe(concat('cal.js')) //junta archivos js en uno solo
-        .pipe(babel({ presets: ['@babel/env'] }))
-        .pipe(uglify())//pone el código en una sola linea
-            
-        .pipe(gulp.dest('./dist/scripts')) //mandar lo trabajado a la dirección establecida    
-   
-    cb(); */
-
 
 	gulp.src(minifyConfig.js)
 		.pipe(concat('abaccor.min.js')) //junta archivos js en uno solo
