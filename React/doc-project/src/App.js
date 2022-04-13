@@ -1,18 +1,20 @@
 import { Component } from 'react';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/navbar';
 
-class App extends Component() {
+export default class App extends Component {
 
   render(){
 
     return(
 
-      <h1>Hello</h1>
+      <Router>
+        <Navbar/>
+      </Router>
 
     );
 
   }
 
 }
-
-export default App;
